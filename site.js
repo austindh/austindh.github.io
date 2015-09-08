@@ -10,7 +10,9 @@ $.getJSON( 'resumeInfo.json', function( data ) {
 		$( '.currentJob' ).removeClass( 'currentJob' );
 		$( '.flexFullRow' ).removeClass( 'flexFullRow' );
 		$( this ).addClass( 'currentJob' );
-
 	});
 
 });
+
+//TODO Add in relevant class/work/personal projects for each language
+//TODO Add list of classes taken/currently enrolled in (probably replace applications)

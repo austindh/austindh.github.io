@@ -42,12 +42,20 @@ h1 {
   margin-left: 5%; }
 
 h2 {
-  margin: 30px 0px 15px 60px;
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   font-size: 30px;
-  font-weight: 400; }
+  font-weight: 100;
+  border-bottom: solid 1px #c3c3c3; }
 
 h3 {
-  margin: 10px 0px 5px 80px; }
+  margin: 0px 0px 5px 50px;
+  font-weight: 400;
+  font-size: 25px; }
 
 p {
   margin-left: 80px;
@@ -122,8 +130,46 @@ p {
 
 .list {
   margin-left: 80px;
-  margin-right: 80px;
-  margin-bottom: 20px; }
+  margin-right: 80px; }
+
+.languageList {
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.language {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 30px;
+  background: rgba(195, 245, 199, 0.41);
+  width: 10%;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  color: gray;
+  cursor: pointer; }
+  .language .name {
+    font-size: 25px;
+    font-weight: 100;
+    color: black;
+    margin-bottom: 5px; }
+  .language:hover {
+    background: rgba(195, 245, 199, 0.61); }
+
+.applicationList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-top: 10px; }
+
+.application {
+  padding: 20px;
+  margin-right: 10px;
+  background: rgba(245, 195, 241, 0.41); }
 
 .resume {
   margin-top: 130px;

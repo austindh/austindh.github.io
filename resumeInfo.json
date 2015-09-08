@@ -38,18 +38,42 @@
     "skills" : {
         "languagesAndFrameworks" :
             [
-                "JavaScript",
-                "jQuery",
-                "Backbone.js",
-                "Handlebars.js",
-                "Java",
-                "VBA",
-                "C++",
-                "PHP",
-                "Python",
-                "HTML",
-                "CSS",
-                "SASS"
+                {
+                    "main": "JavaScript",
+                    "related": [ "jQuery", "Backbone.js", "Handlebars.js", "Node.js" ]
+                },
+                {
+                    "main": "HTML",
+                    "related": []
+                },
+                {
+                    "main": "CSS",
+                    "related": [ "SASS" ]
+                },
+                {
+                    "main": "Java",
+                    "related": []
+                },
+                {
+                    "main": "C++",
+                    "related": []
+                },
+                {
+                    "main": "PHP",
+                    "related": []
+                },
+                {
+                    "main": "SQLite",
+                    "related": []
+                },
+                {
+                    "main": "Python",
+                    "related": []
+                },
+                {
+                    "main": "VBA",
+                    "related": []
+                }
             ],
         "applications" : [ "Excel", "Powerpoint", "Publisher", "Word", "Photoshop", "AutoCAD" ]
     }
