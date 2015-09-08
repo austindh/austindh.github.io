@@ -1,0 +1,53 @@
+{
+    "jobs": [
+        {
+          "title": "Web Developer",
+          "time": "March 2014-present",
+          "employer": "BYU Center for Teaching & Learning",
+          "location": "Provo, UT",
+          "tasks": [
+            "Worked as part of team of front-end developers to improve and maintain Learning Suite, a learning management system (LMS) used daily by approximately 35,000 BYU faculty members and students",
+            "Implemented user interface and functionality using HTML, CSS, JavaScript ( jQuery, Backbone.js, Handlebars.js ), and PHP",
+            "Personally implemented site-wide audio and video support update, including adding codec detection, in-browser feature detection, and QuickTime integration"
+          ]
+        },
+        {
+          "title": "Data Analyst",
+          "time": "July 2013-August 2013",
+          "employer": "Williams & Company CPAs",
+          "location": "Keller, TX",
+          "tasks" : [
+              "Assisted in data analysis and report creation, using Microsoft Excel and VBA",
+              "Created a VBA script to automate the creation of a monthly budget report"
+          ]
+        },
+        {
+          "title": "Bridge Inspection Assistant",
+          "time": "August 2007-August 2010; August 2012-March 2014",
+          "employer": "Hughes Engineering",
+          "location": "Nampa, ID",
+          "tasks" : [
+              "Assisted in inspection of bridges, including taking photos and completing reports",
+              "Edited photos for bridge reports using Adobe Photoshop to adjust brightness, sharpness, and contrast",
+              "Entered data and created graphics and reports using Microsoft Excel and VBA",
+              "Created computer drawings using AutoCAD"
+          ]
+        }
+    ],
+    "skills" : {
+        "languagesAndFrameworks" :
+            [   "VBA",
+                "JavaScript",
+                "jQuery",
+                "Backbone.js",
+                "Handlebars.js",
+                "C++",
+                "PHP",
+                "Python",
+                "HTML",
+                "CSS",
+                "SASS"
+            ],
+        "applications" : [ "Excel", "Powerpoint", "Publisher", "Word", "Photoshop", "AutoCAD" ]
+    }
+}
