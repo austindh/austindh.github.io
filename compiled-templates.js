@@ -10,13 +10,13 @@ this["templates"]["resume"] = Handlebars.template({"1":function(depth0,helpers,p
     + alias3(((helper = (helper = helpers.employer || (depth0 != null ? depth0.employer : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"employer","hash":{},"data":data}) : helper)))
     + "<span class=\"location\">"
     + alias3(((helper = (helper = helpers.location || (depth0 != null ? depth0.location : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"location","hash":{},"data":data}) : helper)))
-    + "</span></div>\n		</div>\n		<div class=\"taskList\">\n"
+    + "</span></div>\n		</div>\n		<ul class=\"taskList\">\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.tasks : depth0),{"name":"each","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "		</div>\n	</div>\n";
+    + "		</ul>\n	</div>\n";
 },"2":function(depth0,helpers,partials,data) {
-    return "			<div class=\"task\">"
+    return "			<li class=\"task\">"
     + this.escapeExpression(this.lambda(depth0, depth0))
-    + "</div>\n";
+    + "</li>\n";
 },"4":function(depth0,helpers,partials,data) {
     return "	<div class=\"language\">"
     + this.escapeExpression(this.lambda(depth0, depth0))

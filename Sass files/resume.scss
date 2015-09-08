@@ -3,7 +3,7 @@
 }
 
 html, body {
-    background: rgb(255, 255, 255);
+    background: gray;
     color: black;
     font-family: sans-serif;
     margin-bottom: 50px;
@@ -11,8 +11,10 @@ html, body {
     display: inline-table;
 }
 
+$lineHeight: 25px;
+
 h1 {
-    height: 100px;
+    height: 70px;
     text-align: center;
     background: linear-gradient(to bottom, rgba(110, 145, 186, 1), rgb(19, 43, 71));
     color: white;
@@ -36,14 +38,14 @@ h1 {
 #fadeBlock {
     position: fixed;
     width: 90%;
-    height: 180px;
+    height: 190px;
     background: linear-gradient(to bottom, white, white, rgba(255, 255, 255, 0));
     z-index: 0;
     margin-left: 5%;
 }
 
 h2 {
-    margin: 30px 0px 5px 60px;
+    margin: 30px 0px 15px 60px;
     font-size: 30px;
 }
 
@@ -54,6 +56,7 @@ h3 {
 p {
     margin-left: 80px;
     margin-right: 80px;
+    line-height: $lineHeight;
 }
 
 .job {
@@ -68,6 +71,10 @@ p {
     font-weight: bold;
 }
 
+.employer {
+    margin: 5px 0 15px 0;
+}
+
 .time {
     margin-left: 10px;
     display: inline;
@@ -80,6 +87,7 @@ p {
 .task {
     margin-top: 5px;
     margin-right: 80px;
+    line-height: $lineHeight;
 }
 
 .employer {
@@ -95,6 +103,9 @@ p {
     float: left;
     width: 90%;
     margin-top: 150px;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 .block {

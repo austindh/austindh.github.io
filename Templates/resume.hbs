@@ -9,11 +9,11 @@
 			<div class="jobTitle">{{title}}</div><div class="time">{{time}}</div>
 			<div class="employer">{{employer}}<span class="location">{{location}}</span></div>
 		</div>
-		<div class="taskList">
+		<ul class="taskList">
 		{{#each tasks}}
-			<div class="task">{{ this }}</div>
+			<li class="task">{{ this }}</li>
 		{{/each}}
-		</div>
+		</ul>
 	</div>
 {{/each}}
 
@@ -22,14 +22,14 @@
 <h3>Languages and Frameworks</h3>
 <div class="languageList list">
 {{#each skills.languagesAndFrameworks}}
-	<div class="language">{{ this }}</div>
+	<div class="language">{{this}}</div>
 {{/each}}
 </div>
 
 <h3>Applications</h3>
 <div class="applicationList list">
 {{#each skills.applications}}
-	<div class="application">{{ this }}</div>
+	<div class="application">{{this}}</div>
 {{/each}}
 </div>
 
