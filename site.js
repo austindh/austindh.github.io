@@ -5,4 +5,12 @@ $.getJSON( 'resumeInfo.json', function( data ) {
 	var resumeInfo = data;
 	$( '.resume' ).html( resumeTemplate( resumeInfo ) );
 
+	//jQuery events
+	$( '.job' ).on( 'click', function() {
+		$( '.currentJob' ).removeClass( 'currentJob' );
+		$( '.flexFullRow' ).removeClass( 'flexFullRow' );
+		$( this ).addClass( 'currentJob' );
+
+	});
+
 });

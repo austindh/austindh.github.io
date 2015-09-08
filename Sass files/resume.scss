@@ -2,8 +2,10 @@
     margin: 0px;
 }
 
+$background: #fcfcfc;
+
 html, body {
-    background: gray;
+    background: $background;
     color: black;
     font-family: sans-serif;
     margin-bottom: 50px;
@@ -13,6 +15,15 @@ html, body {
 
 $lineHeight: 25px;
 
+section {
+    margin-bottom: 70px;
+}
+
+.qualSumm {
+    color: #5d5d5d;
+    //margin-top: -10px;
+}
+
 h1 {
     height: 70px;
     text-align: center;
@@ -20,7 +31,7 @@ h1 {
     color: white;
     padding: 20px 0px 20px 0px;
     font-size: 40px;
-    font-weight: normal;
+    font-weight: 300;
     position: fixed;
     width: 100%;
     z-index: 2;
@@ -30,7 +41,7 @@ h1 {
         top: 50%;
         transform: translateY(-50%);
         font-size: 55px;
-        text-shadow: 1px 1px 2px rgb(45, 97, 157);
+        text-shadow: 1px 1px 2px black;
     }
 
 }
@@ -47,6 +58,7 @@ h1 {
 h2 {
     margin: 30px 0px 15px 60px;
     font-size: 30px;
+    font-weight: 400;
 }
 
 h3 {
@@ -59,35 +71,115 @@ p {
     line-height: $lineHeight;
 }
 
+
+
+.jobs {
+    position: relative;
+    $margin: 50px;
+    margin-left: $margin;
+    margin-right: $margin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .job {
-    margin-left: 80px;
-    margin-right: 80px;
+    $padding: 20px;
+
+    color: gray;
+    flex: 0 45%;
     margin-bottom: 20px;
+    width: auto;
+    background: rgba(195, 218, 245, 0.41);
+    padding: $padding;
+    text-align: center;
+    order: 2;
+    cursor: pointer;
+
+    &:hover {
+        color: #575757;//
+        //border: solid 1px rgba(195, 218, 245, 0.64);
+        //padding: $padding - 1;
+        background: rgba(195, 218, 245, 0.61);
+    }
+
+    &:active {
+        background: rgba(195, 218, 245, 0.61);
+    }
+
+    ul {
+        text-align: left;
+    }
+
+    .taskList {
+        display: none;
+    }
+
+    .jobTitle {
+        color: #2e2e2e;
+        //display: inline;
+        font-size: 30px;
+        font-weight: 100;
+        margin-bottom: 10px;
+        text-shadow: 0px 1px gray;
+    }
+
+    .employer {
+        margin: 5px 0 5px 0;
+    }
+
+    .time {
+        //margin-left: 10px;
+        //display: inline;
+        display: none;
+    }
+
+    .location {
+        //margin-left: 5px;
+        //color: gray;
+    }
+
+    .task {
+        margin-top: 5px;
+        margin-right: 80px;
+        line-height: $lineHeight;
+    }
+
 }
 
-.jobTitle {
-    display: inline;
-    font-size: 20px;
-    font-weight: bold;
+.currentJob {
+    $padding: 50px;
+
+    background: rgba(195, 218, 245, 0.61);
+    flex: 1 100%;
+    position: relative;
+    padding: $padding;
+    order: 1;
+    color: black;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        //padding: $padding - 1;
+        color: black;
+        background: rgba(195, 218, 245, 0.61);
+    }
+    .jobInfo {
+        flex: 2;
+    }
+    .taskList {
+        flex: 3;
+        display: block;
+        min-height: 150px;
+    }
+    .time {
+        display: block;
+    }
+
 }
 
-.employer {
-    margin: 5px 0 15px 0;
-}
-
-.time {
-    margin-left: 10px;
-    display: inline;
-}
-
-.location {
-    margin-left: 10px;
-}
-
-.task {
-    margin-top: 5px;
-    margin-right: 80px;
-    line-height: $lineHeight;
+.flexFullRow {
+    flex: 1 100%;
 }
 
 .employer {
@@ -100,12 +192,12 @@ p {
 }
 
 .resume {
-    float: left;
-    width: 90%;
-    margin-top: 150px;
-    background-color: white;
-    padding-top: 50px;
-    padding-bottom: 100px;
+    //float: left;
+    //width: 90%;
+    margin-top: 130px;
+    background-color: $background;
+    //padding-top: 50px;
+    //padding-bottom: 100px;
 }
 
 .block {

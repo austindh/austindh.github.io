@@ -1,6 +1,7 @@
 {
     "jobs": [
         {
+          "current": true,
           "title": "Web Developer",
           "time": "March 2014-present",
           "employer": "BYU Center for Teaching & Learning",
@@ -36,11 +37,13 @@
     ],
     "skills" : {
         "languagesAndFrameworks" :
-            [   "VBA",
+            [
                 "JavaScript",
                 "jQuery",
                 "Backbone.js",
                 "Handlebars.js",
+                "Java",
+                "VBA",
                 "C++",
                 "PHP",
                 "Python",

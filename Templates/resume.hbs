@@ -1,41 +1,60 @@
-<h2>Summary of Qualifications</h2>
-<p>I am an undergraduate student at Brigham Young University, majoring in computer science. I am punctual, a fast learner, and I work well with others. As a Thomas S. Monson Presidential Scholarship recipient, I have been recognized for my leadership, personal character, and academic achievements.</p>
+<section>
+	<p class="qualSumm">
+		I am an undergraduate student at Brigham Young University, majoring in computer science. I am punctual, a fast learner,
+		and I work well with others. As a Thomas S. Monson Presidential Scholarship recipient, I have been recognized for my
+		leadership, personal character, and academic achievements.
+	</p>
+</section>
 
-<h2>Work Experience</h2>
-
-{{#each jobs}}
-	<div class="job">
-		<div class="jobInfo">
-			<div class="jobTitle">{{title}}</div><div class="time">{{time}}</div>
-			<div class="employer">{{employer}}<span class="location">{{location}}</span></div>
-		</div>
-		<ul class="taskList">
-		{{#each tasks}}
-			<li class="task">{{ this }}</li>
+<section>
+<!--	<h2>Work Summary</h2>-->
+	<div class="jobs">
+		{{#each jobs}}
+				<div class="job {{#if current}}flexFullRow{{/if}}">
+				<div class="jobInfo">
+					<div class="jobTitle">{{title}}</div>
+					<div class="time">{{time}}</div>
+					<div class="employer">{{employer}}</div>
+					<div class="location"> {{location}}</div>
+				</div>
+				<div class="taskList">
+					<ul class="taskList">
+					{{#each tasks}}
+						<li class="task">{{this}}</li>
+					{{/each}}
+					</ul>
+				</div>
+			</div>
 		{{/each}}
-		</ul>
 	</div>
-{{/each}}
+</section>
 
-<h2>Skills</h2>
+<section>
+	<h2>Skills</h2>
 
-<h3>Languages and Frameworks</h3>
-<div class="languageList list">
-{{#each skills.languagesAndFrameworks}}
-	<div class="language">{{this}}</div>
-{{/each}}
-</div>
+	<h3>Languages and Frameworks</h3>
+	<div class="languageList list">
+	{{#each skills.languagesAndFrameworks}}
+		<div class="language">{{this}}</div>
+	{{/each}}
+	</div>
 
-<h3>Applications</h3>
-<div class="applicationList list">
-{{#each skills.applications}}
-	<div class="application">{{this}}</div>
-{{/each}}
-</div>
+	<h3>Applications</h3>
+	<div class="applicationList list">
+	{{#each skills.applications}}
+		<div class="application">{{this}}</div>
+	{{/each}}
+	</div>
+</section>
 
-<h2>Awards</h2>
-<p>Thomas S. Monson Presidential Scholarship, Brigham Young University, August 2009</p>
-<p>Eagle Scout, Boy Scouts of America, 2008</p>
+<section>
+	<h2>Awards</h2>
+	<p>Thomas S. Monson Presidential Scholarship, Brigham Young University, August 2009</p>
+	<p>Eagle Scout, Boy Scouts of America, 2008</p>
 
-<h2>Volunteer Work</h2>
-<p>Missionary for the Church of Jesus Christ of Latter-day Saints in South Africa and Botswana, August 2010–August 2012</p>
+	<h2>Volunteer Work</h2>
+	<p>Missionary for the Church of Jesus Christ of Latter-day Saints in South Africa and Botswana, August 2010–August 2012</p>
+
+
+</section>
+

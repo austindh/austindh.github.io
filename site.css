@@ -2,12 +2,18 @@
   margin: 0px; }
 
 html, body {
-  background: gray;
+  background: #fcfcfc;
   color: black;
   font-family: sans-serif;
   margin-bottom: 50px;
   height: 100%;
   display: inline-table; }
+
+section {
+  margin-bottom: 70px; }
+
+.qualSumm {
+  color: #5d5d5d; }
 
 h1 {
   height: 70px;
@@ -16,7 +22,7 @@ h1 {
   color: white;
   padding: 20px 0px 20px 0px;
   font-size: 40px;
-  font-weight: normal;
+  font-weight: 300;
   position: fixed;
   width: 100%;
   z-index: 2; }
@@ -25,7 +31,7 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
     font-size: 55px;
-    text-shadow: 1px 1px 2px #2d619d; }
+    text-shadow: 1px 1px 2px black; }
 
 #fadeBlock {
   position: fixed;
@@ -37,7 +43,8 @@ h1 {
 
 h2 {
   margin: 30px 0px 15px 60px;
-  font-size: 30px; }
+  font-size: 30px;
+  font-weight: 400; }
 
 h3 {
   margin: 10px 0px 5px 80px; }
@@ -47,30 +54,71 @@ p {
   margin-right: 80px;
   line-height: 25px; }
 
+.jobs {
+  position: relative;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
 .job {
-  margin-left: 80px;
-  margin-right: 80px;
-  margin-bottom: 20px; }
+  color: gray;
+  flex: 0 45%;
+  margin-bottom: 20px;
+  width: auto;
+  background: rgba(195, 218, 245, 0.41);
+  padding: 20px;
+  text-align: center;
+  order: 2;
+  cursor: pointer; }
+  .job:hover {
+    color: #575757;
+    background: rgba(195, 218, 245, 0.61); }
+  .job:active {
+    background: rgba(195, 218, 245, 0.61); }
+  .job ul {
+    text-align: left; }
+  .job .taskList {
+    display: none; }
+  .job .jobTitle {
+    color: #2e2e2e;
+    font-size: 30px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    text-shadow: 0px 1px gray; }
+  .job .employer {
+    margin: 5px 0 5px 0; }
+  .job .time {
+    display: none; }
+  .job .task {
+    margin-top: 5px;
+    margin-right: 80px;
+    line-height: 25px; }
 
-.jobTitle {
-  display: inline;
-  font-size: 20px;
-  font-weight: bold; }
+.currentJob {
+  background: rgba(195, 218, 245, 0.61);
+  flex: 1 100%;
+  position: relative;
+  padding: 50px;
+  order: 1;
+  color: black;
+  display: flex;
+  align-items: center; }
+  .currentJob:hover {
+    color: black;
+    background: rgba(195, 218, 245, 0.61); }
+  .currentJob .jobInfo {
+    flex: 2; }
+  .currentJob .taskList {
+    flex: 3;
+    display: block;
+    min-height: 150px; }
+  .currentJob .time {
+    display: block; }
 
-.employer {
-  margin: 5px 0 15px 0; }
-
-.time {
-  margin-left: 10px;
-  display: inline; }
-
-.location {
-  margin-left: 10px; }
-
-.task {
-  margin-top: 5px;
-  margin-right: 80px;
-  line-height: 25px; }
+.flexFullRow {
+  flex: 1 100%; }
 
 .list {
   margin-left: 80px;
@@ -78,12 +126,8 @@ p {
   margin-bottom: 20px; }
 
 .resume {
-  float: left;
-  width: 90%;
-  margin-top: 150px;
-  background-color: white;
-  padding-top: 50px;
-  padding-bottom: 100px; }
+  margin-top: 130px;
+  background-color: #fcfcfc; }
 
 .block {
   background: gray;
