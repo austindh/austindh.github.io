@@ -4,6 +4,7 @@ var handlebars = require( 'gulp-handlebars' );
 var declare = require( 'gulp-declare' );
 var concat = require( 'gulp-concat' );
 var sass = require( 'gulp-sass' );
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task( 'default', function() {
 	gulp.start( 'templates', 'css', 'watch' );
@@ -26,6 +27,10 @@ gulp.task( 'css', function() {
 	gulp.src( 'Sass files/*.scss' )
 		.pipe( sass().on( 'error', sass.logError ) )
 		.pipe( concat( 'site.css' ) )
+		.pipe( autoprefixer({
+			browsers: [ 'last 2 versions' ],
+			cascade: false
+		}) )
 		.pipe( gulp.dest( '' ) );
 });
 

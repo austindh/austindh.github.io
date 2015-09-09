@@ -96,6 +96,9 @@ p {
 .job {
 	$padding: 20px;
 
+//	transition-property: all;
+//	transition-duration: 1s;
+
 	color: gray;
 	flex: 0 45%;
 	margin-bottom: 20px;
@@ -103,7 +106,7 @@ p {
 	background: rgba(195, 218, 245, 0.41);
 	padding: $padding;
 	text-align: center;
-	order: 2;
+	order: 3;
 	cursor: pointer;
 
 	&:hover {
@@ -157,14 +160,28 @@ p {
 
 }
 
+.topRow {
+	order: 1!important;
+	transition: all 1s;
+	//flex: 1 45%;
+}
+
+.transitionJob {
+	flex: 1 45%;
+	//transition: all 0.5s;
+}
+
 .currentJob {
 	$padding: 50px;
 
+	cursor: default;
+	transition-duration: 0.5s;
+//	transition-delay: 0.1s;
 	background: rgba(195, 218, 245, 0.61);
 	flex: 1 100%;
 	position: relative;
 	padding: $padding;
-	order: 1;
+	order: 2;
 	color: black;
 	display: flex;
 	align-items: center;
