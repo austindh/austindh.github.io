@@ -185,6 +185,7 @@ p {
   justify-content: flex-start; }
 
 .language {
+  transition: all 0.5s;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -194,7 +195,7 @@ p {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
   background: rgba(195, 245, 199, 0.41);
   width: 10%;
   text-align: center;
@@ -203,27 +204,46 @@ p {
   color: gray;
   cursor: pointer; }
   .language .name {
-    font-size: 25px;
-    font-weight: 100;
+    font-size: 20px;
     color: black;
     margin-bottom: 5px; }
   .language:hover {
     background: rgba(195, 245, 199, 0.61); }
+  .language.selected {
+    background: rgba(195, 245, 199, 0.61); }
 
-.applicationList {
+.selected {
+  transition: all 0.5s; }
+
+.dim {
+  opacity: 0.5; }
+
+.courseList {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-left: 50px;
+  margin-right: 50px;
   margin-top: 10px; }
 
-.application {
+.course {
+  width: 10%;
+  transition: all 0.5s;
+  cursor: pointer;
   padding: 20px;
   margin-right: 10px;
+  margin-bottom: 20px;
   background: rgba(245, 195, 241, 0.41); }
+  .course:hover {
+    background: rgba(245, 195, 241, 0.61); }
+  .course.selected {
+    background: rgba(245, 195, 241, 0.61); }
 
 .resume {
   margin-top: 130px;

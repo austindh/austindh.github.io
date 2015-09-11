@@ -1,0 +1,146 @@
+{
+    "jobs": [
+        {
+          "current": true,
+          "title": "Web Developer",
+          "time": "March 2014-present",
+          "employer": "BYU Center for Teaching & Learning",
+          "location": "Provo, UT",
+          "tasks": [
+            "Worked as part of team of front-end developers to improve and maintain Learning Suite, a learning management system (LMS) used daily by approximately 35,000 BYU faculty members and students",
+            "Implemented user interface and functionality using HTML, CSS, JavaScript ( jQuery, Backbone.js, Handlebars.js ), and PHP",
+            "Personally implemented site-wide audio and video support update, including adding codec detection, in-browser feature detection, and QuickTime integration"
+          ]
+        },
+        {
+          "title": "Data Analyst",
+          "time": "July 2013-August 2013",
+          "employer": "Williams & Company CPAs",
+          "location": "Keller, TX",
+          "tasks" : [
+              "Assisted in data analysis and report creation, using Microsoft Excel and VBA",
+              "Created a VBA script to automate the creation of a monthly budget report"
+          ]
+        },
+        {
+          "title": "Bridge Inspection Assistant",
+          "time": "August 2007-August 2010; August 2012-March 2014",
+          "employer": "Hughes Engineering",
+          "location": "Nampa, ID",
+          "tasks" : [
+              "Assisted in inspection of bridges, including taking photos and completing reports",
+              "Edited photos for bridge reports using Adobe Photoshop to adjust brightness, sharpness, and contrast",
+              "Entered data and created graphics and reports using Microsoft Excel and VBA",
+              "Created computer drawings using AutoCAD"
+          ]
+        }
+    ],
+    "skills" : {
+        "languagesAndFrameworks" : [
+            {
+                "main": "JavaScript",
+                "related": [ "jQuery", "Backbone.js", "Handlebars.js", "Node.js" ]
+            },
+            {
+                "main": "HTML",
+                "related": []
+            },
+            {
+                "main": "CSS",
+                "related": [ "SASS" ]
+            },
+            {
+                "main": "Java",
+                "related": []
+            },
+            {
+                "main": "C++",
+                "related": []
+            },
+            {
+                "main": "PHP",
+                "related": []
+            },
+            {
+                "main": "SQLite",
+                "related": []
+            },
+            {
+                "main": "C#",
+                "related": []
+            },
+            {
+                "main": "Python",
+                "related": []
+            },
+            {
+                "main": "VBA",
+                "related": []
+            },
+            {
+                "main": "C",
+                "related": []
+            },
+            {
+                "main": "Assembly",
+                "related": []
+            }
+        ],
+        "csCoursesComplete" : [
+            {
+                "number": 142,
+                "title": "Intro to Computer Programming",
+                "languages": [ "C++" ]
+            },
+            {
+                "number": 224,
+                "title": "Computer Systems",
+                "languages": [ "Assembly", "C" ]
+            },
+            {
+                "number": 235,
+                "title": "Data Structures",
+                "languages": [ "C++" ]
+            },
+            {
+                "number": 236,
+                "title": "Discrete Structure",
+                "languages": [ "C++" ]
+            },
+            {
+                "number": 252,
+                "title": "Computational and Probabilistic Models",
+                "languages": []
+            },
+            {
+                "number": 256,
+                "title": "Designing the User Experience",
+                "languages": [ "HTML", "CSS", "JavaScript" ]
+            },
+            {
+                "number": 240,
+                "title": "Advanced Programming Concepts",
+                "languages": [ "Java", "SQLite" ]
+            }
+        ],
+        "csCoursesCurrent" : [
+            {
+                "number": 312,
+                "title": "Algorithm Design and Analysis",
+                "languages": [ "C#" ]
+            },
+            {
+                "number": 340,
+                "title": "Software Design and Testing",
+                "languages": [ "Java" ]
+            },
+            {
+                "number": 345,
+                "title": "Operating Systems Design",
+                "languages": [ "C" ]
+            }
+        ]
+
+
+    }
+}

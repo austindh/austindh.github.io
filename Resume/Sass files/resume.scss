@@ -229,10 +229,11 @@ p {
 }
 
 .language {
+	transition: all 0.5s;
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
-	padding: 30px;
+	padding: 20px;
 	background: rgba(195, 245, 199, 0.41);
 	width: 10%;
 	text-align: center;
@@ -243,8 +244,8 @@ p {
 	cursor: pointer;
 
 	.name {
-		font-size: 25px;
-		font-weight: 100;
+		font-size: 20px;
+		//font-weight: 100;
 		color: black;
 		margin-bottom: 5px;
 	}
@@ -254,19 +255,46 @@ p {
 		background: rgba(195, 245, 199, 0.61);
 	}
 
+	&.selected {
+		background: rgba(195, 245, 199, 0.61);
+	}
+
 }
 
-.applicationList {
+.selected {
+	//font-weight: bold;
+	transition: all 0.5s;
+}
+
+.dim {
+	opacity: 0.5;
+}
+
+.courseList {
 	display: flex;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	margin-left: 50px;
+	margin-right: 50px;
 	margin-top: 10px;
 }
 
-.application {
+.course {
+	width: 10%;
+	transition: all 0.5s;
+	cursor: pointer;
 	padding: 20px;
 	margin-right: 10px;
+	margin-bottom: 20px;
 	background: rgba(245, 195, 241, 0.41);
+
+	&:hover {
+		background: rgba(245, 195, 241, 0.61);
+	}
+
+	&.selected {
+		background: rgba(245, 195, 241, 0.61);
+	}
 }
 
 .resume {

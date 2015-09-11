@@ -36,19 +36,30 @@
 	<h3>Languages and Frameworks</h3>
 	<div class="languageList">
 		{{#each skills.languagesAndFrameworks}}
-			<div class="language">
+			<div class="language {{languageName main}}">
 				<div class="name">{{main}}</div>
+<!--
 				{{#each related}}
 					<div class="relatedLanguage">{{this}}</div>
 				{{/each}}
+-->
 			</div>
 		{{/each}}
 	</div>
 
-	<h3>Applications</h3>
-	<div class="applicationList">
-		{{#each skills.applications}}
-			<div class="application">{{this}}</div>
+	<h3>Computer Science Courses</h3>
+	<div class="courseList">
+		{{#each skills.csCoursesComplete}}
+			<div class="course{{#each languages}} {{languageName this}}{{/each}}">
+				<div class="courseNumber">CS {{number}}</div>
+				<div class="courseTitle">{{title}}</div>
+			</div>
+		{{/each}}
+		{{#each skills.csCoursesCurrent}}
+			<div class="course{{#each languages}} {{languageName this}}{{/each}}">
+				<div class="courseNumber">CS {{number}}</div>
+				<div class="courseTitle">{{title}}</div>
+			</div>
 		{{/each}}
 	</div>
 </section>
