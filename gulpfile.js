@@ -24,17 +24,29 @@ gulp.task( 'templates', function() {
 });
 
 gulp.task( 'css', function() {
-	gulp.src( 'Resume/Sass files/*.scss' )
+
+	var folders = [ 'Resume', 'Flow Free' ];
+
+	for ( var i = 0; i < folders.length; i++ ) {
+		var folder = folders[i];
+
+		gulp.src( folder + '/Sass files/**/*.scss', {base:'.'} )
 		.pipe( sass().on( 'error', sass.logError ) )
 		.pipe( concat( 'site.css' ) )
 		.pipe( autoprefixer({
 			browsers: [ 'last 2 versions' ],
 			cascade: false
 		}) )
-		.pipe( gulp.dest( 'Resume/' ) );
+		.pipe( gulp.dest( folder ) );
+
+	}
+
+
+
 });
 
 gulp.task( 'watch', function() {
 	gulp.watch( 'Resume/Sass files/*.scss', [ 'css' ] );
+	gulp.watch( 'Flow Free/Sass files/*.scss', [ 'css' ] );
 	gulp.watch( 'Resume/Templates/*.hbs', [ 'templates' ] );
 });
