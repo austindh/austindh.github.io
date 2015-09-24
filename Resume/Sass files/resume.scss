@@ -249,7 +249,7 @@ p {
 	margin-bottom: 20px;
 	//height: 90px;
 	color: gray;
-	cursor: pointer;
+	cursor: default;
 
 	.name {
 		font-size: 20px;
@@ -290,7 +290,7 @@ p {
 .course {
 	width: 10%;
 	transition: all 0.5s;
-	cursor: pointer;
+	cursor: default;
 	padding: 20px;
 	margin-right: 10px;
 	margin-bottom: 20px;
