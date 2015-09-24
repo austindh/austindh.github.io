@@ -51,7 +51,7 @@ this["templates"]["resume"] = Handlebars.template({"1":function(depth0,helpers,p
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<section>\n	<h2>Summary of Qualifications</h2>\n	<p class=\"qualSumm\">\n		I am an undergraduate student at Brigham Young University, majoring in computer science. I am punctual, a fast learner,\n		and I work well with others. As a Thomas S. Monson Presidential Scholarship recipient, I have been recognized for my\n		leadership, personal character, and academic achievements.\n	</p>\n</section>\n\n<section>\n	<h2>Work Summary</h2>\n	<div class=\"jobs\">\n"
+  return "<p class=\"summary\">\n	I am an undergraduate student at Brigham Young University, majoring in computer science, set to graduate December\n	2016. I am seeking an internship for the summer of 2016.\n</p>\n\n<section>\n	<h2>Work Summary</h2>\n	<div class=\"jobs\">\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.jobs : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "	</div>\n</section>\n\n<section>\n	<h2>Skills</h2>\n\n	<h3>Languages and Frameworks</h3>\n	<div class=\"languageList\">\n"
     + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.skills : depth0)) != null ? stack1.languagesAndFrameworks : stack1),{"name":"each","hash":{},"fn":this.program(6, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")

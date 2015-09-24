@@ -10,6 +10,7 @@ var del = require( 'del' );
 var fs = require( 'fs' );
 
 var versionJSON = require( './version.json' );
+var VERSION = versionJSON.version;
 
 gulp.task( 'default', function() {
 	gulp.start( 'templates', 'css', 'js', 'watch' );
@@ -17,8 +18,7 @@ gulp.task( 'default', function() {
 
 gulp.task( 'templates', function() {
 
-	var versionNumber = versionJSON.version;
-	var fileName = 'resume_compiled-templates' + versionNumber + '.js';
+	var fileName = 'resume_compiled-templates' + VERSION + '.js';
 
 	gulp.src( 'Resume/Templates/*.hbs' )
 		.pipe( handlebars() )
@@ -38,9 +38,7 @@ var folders = [ 'Resume', 'Flow Free' ]; //TODO add Flow Free again later
 
 gulp.task( 'css', function() {
 
-	var versionNumber = versionJSON.version;
-
-	var fileName = 'resume_site' + versionNumber + '.css';
+	var fileName = 'resume_site' + VERSION + '.css';
 
 
 	gulp.src( 'Resume/Sass files/**/*.scss' )
@@ -56,8 +54,7 @@ gulp.task( 'css', function() {
 
 gulp.task( 'js', function() {
 
-	var versionNumber = versionJSON.version;
-	var fileName = 'resume_site' + versionNumber + '.js';
+	var fileName = 'resume_site' + VERSION + '.js';
 
 	gulp.src( 'Resume/site.js' )
 		.pipe( concat( fileName ) )
@@ -66,30 +63,36 @@ gulp.task( 'js', function() {
 
 });
 
+gulp.task( 'htmlRef', function() {
+
+	//Replace references in HTML
+	gulp.src( 'index.html' )
+		.pipe( replace( /resume_(.*?)\.css/, 'resume_site' + VERSION + '.css' ) )
+		.pipe( replace( /resume_(site.*?).js/, 'resume_site' + VERSION + '.js' ) )
+		.pipe( replace( /resume_(compiled.*?)\.js/, 'resume_compiled-templates' + VERSION + '.js' ) )
+		.pipe( gulp.dest('') );
+
+});
+
 //Compile everything and add version number to end of CSS/JavaScript files to prevent caching
 gulp.task( 'build', [ 'templates', 'css', 'js' ], function() {
 
 	//Increment version number for next build
-	var versionNum = versionJSON.version;
-	versionJSON.version = versionNum + 1;
-	fs.writeFile( 'version.json', JSON.stringify( versionJSON, null, 4 ), function( err ) {
-		console.log( err );
-	});
+//	var versionNum = VERSION + 1;
+//	versionJSON.version = versionNum;
+//	fs.writeFile( 'version.json', JSON.stringify( versionJSON, null, 4 ), function( err ) {
+//		console.log( err );
+//	});
 
 	//Delete old compiled files
 	del.sync( 'resume_*.@(css|js)' );
 
-	//Replace references in HTML
-	gulp.src( 'index.html' )
-		.pipe( replace( /resume_(.*?)\.css/, 'resume_site' + versionNum + '.css' ) )
-		.pipe( replace( /resume_(site.*?).js/, 'resume_site' + versionNum + '.js' ) )
-		.pipe( replace( /resume_(compiled.*?)\.js/, 'resume_compiled-templates' + versionNum + '.js' ) )
-		.pipe( gulp.dest('') );
+	gulp.start( 'htmlRef' );
 
 });
 
 
 gulp.task( 'watch', function() {
-	gulp.watch( 'Resume/Sass files/*.scss', [ 'css' ] );
+	gulp.watch( 'Resume/Sass files/*.scss', [ 'css', 'htmlRef' ] );
 	gulp.watch( 'Resume/Templates/*.hbs', [ 'templates' ] );
 });

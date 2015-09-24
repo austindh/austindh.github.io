@@ -12,8 +12,11 @@ html, body {
 section {
   margin-bottom: 70px; }
 
-.qualSumm {
-  color: #5d5d5d; }
+.summary {
+  color: #5d5d5d;
+  top: 30px;
+  margin-bottom: 70px;
+  position: relative; }
 
 h1 {
   height: 70px;
@@ -61,7 +64,8 @@ h3 {
 p {
   margin-left: 80px;
   margin-right: 80px;
-  line-height: 25px; }
+  line-height: 25px;
+  color: #5d5d5d; }
 
 .jobs {
   position: relative;
@@ -156,7 +160,15 @@ p {
     -webkit-flex: 3;
     -ms-flex: 3;
     flex: 3;
-    display: block;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     min-height: 150px; }
   .currentJob .time {
     display: block; }
