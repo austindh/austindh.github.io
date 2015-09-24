@@ -19,9 +19,14 @@ section {
 	margin-bottom: 70px;
 }
 
-.qualSumm {
-	color: #5d5d5d;
-	//margin-top: -10px;
+$darkGray: #5d5d5d;
+
+.summary
+{
+	color: $darkGray;
+	top: 30px;
+	margin-bottom: 70px;
+	position: relative;
 }
 
 h1 {
@@ -79,6 +84,7 @@ p {
 	margin-left: 80px;
 	margin-right: 80px;
 	line-height: $lineHeight;
+	color: $darkGray;
 }
 
 
@@ -196,7 +202,9 @@ p {
 	}
 	.taskList {
 		flex: 3;
-		display: block;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		min-height: 150px;
 	}
 	.time {

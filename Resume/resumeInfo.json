@@ -9,7 +9,7 @@
           "tasks": [
             "Worked as part of team of front-end developers to improve and maintain Learning Suite, a learning management system (LMS) used daily by approximately 35,000 BYU faculty members and students",
             "Implemented user interface and functionality using HTML, CSS, JavaScript ( jQuery, Backbone.js, Handlebars.js ), and PHP",
-            "Personally implemented site-wide audio and video support update, including adding codec detection, in-browser feature detection, and QuickTime integration"
+            "Implemented site-wide audio and video support update, including adding codec detection, in-browser feature detection, and QuickTime integration"
           ]
         },
         {
@@ -28,8 +28,6 @@
           "employer": "Hughes Engineering",
           "location": "Nampa, ID",
           "tasks" : [
-              "Assisted in inspection of bridges, including taking photos and completing reports",
-              "Edited photos for bridge reports using Adobe Photoshop to adjust brightness, sharpness, and contrast",
               "Entered data and created graphics and reports using Microsoft Excel and VBA",
               "Created computer drawings using AutoCAD"
           ]
@@ -67,10 +65,6 @@
             },
             {
                 "main": "C#",
-                "related": []
-            },
-            {
-                "main": "Python",
                 "related": []
             },
             {
