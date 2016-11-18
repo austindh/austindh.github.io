@@ -1,14 +1,4 @@
 {
-	"bitwise": true,
-	"curly": true,
-	"eqeqeq": true,
-	"undef": true,
-	"unused": true,
-	"latedef": "nofunc",
-	"shadow": "inner",
-	"browser": true,
-	"jquery": true,
-	"predef": [
-		"Handlebars"
-	]
+	"esnext": true,
+	"node": true
 }
