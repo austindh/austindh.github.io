@@ -1,0 +1,36 @@
+#top-nav {
+	background: lightgray;
+	display: flex;
+	padding: 10px;
+
+	.pages {
+		// border: solid 1px gray;
+		display: flex;
+		align-items: center;
+		position: relative;
+
+		> div {
+			// border: solid 1px blue;
+			padding: 0 5px;
+		}
+
+		#highlighter {
+			position: absolute;
+			bottom: 0;
+			width: 0px;
+			height: 3px;
+			background: #58a2ff;
+			transition: 
+				left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+				width 0.3s ease-in-out,
+				opacity 0.5s;
+			padding: 0;
+			// transition: width 0.5s;
+		}
+	}
+
+	.title {
+		font-size: 1.5em;
+		margin-right: 10px;
+	}
+}
