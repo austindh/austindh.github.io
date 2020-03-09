@@ -1,17 +1,24 @@
 #top-nav {
 	background: lightgray;
 	display: flex;
-	padding: 10px;
+	padding: 15px 20px;
 
 	.pages {
 		// border: solid 1px gray;
+		margin-left: 20px;
 		display: flex;
 		align-items: center;
 		position: relative;
 
 		> div {
 			// border: solid 1px blue;
-			padding: 0 5px;
+			padding: 0 15px;
+			// margin: 0 10px;
+
+			a {
+				color: unset;
+				text-decoration: none;
+			}
 		}
 
 		#highlighter {
@@ -21,11 +28,10 @@
 			height: 3px;
 			background: #58a2ff;
 			transition: 
-				left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-				width 0.3s ease-in-out,
+				left 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+				width 0.5s ease-in-out,
 				opacity 0.5s;
 			padding: 0;
-			// transition: width 0.5s;
 		}
 	}
 

@@ -11,7 +11,7 @@ export interface Job {
 	responsibilities: string[]
 }
 
-export const myJobs: Job[] = [
+export const myJobs = [
 	{
 		companyName: "BYU Center for Teaching & Learning",
 		location: "Provo, UT",
@@ -92,3 +92,7 @@ export const myJobs: Job[] = [
 		]
 	}
 ];
+
+// Show in reverse order
+myJobs.reverse();
+myJobs.forEach(j => j.titles.reverse());

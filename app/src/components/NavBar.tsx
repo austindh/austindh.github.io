@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from 'react-router-dom';
 
 import "./NavBar.scss";
 
@@ -8,12 +9,18 @@ export const NavBar = () => {
 		route: string;
 	}
 	const pages: Page[] = [
-		{ name: "Jobs", route: "/" },
+		{ name: "Work", route: "/" },
 		{ name: "Projects", route: "/projects" },
 		{ name: 'Longer name here', route: '/test' }
 	];
 
-	const [selectedPage, setSelectedPage] = useState(pages[0].name);
+	const { pathname } = useLocation();
+	const currentPage = pages.find(p => p.route === pathname) || pages[0];
+	useEffect(() => {
+		setSelectedPage(currentPage.name);
+	}, [currentPage.name]);
+	
+	const [selectedPage, setSelectedPage] = useState(currentPage.name);
 	const [highlighterStyle, setHighlighterStyle] = useState({
 		opacity: 0,
 		width: 0,
@@ -32,15 +39,17 @@ export const NavBar = () => {
 		const pageWidth = pageLink.clientWidth;
 		const newHighlighterWidth = pageWidth - 15;
 
-		setHighlighterStyle({
-			...highlighterStyle,
-			left: pageLeft + (pageWidth / 2) - (newHighlighterWidth / 2),
-			width: newHighlighterWidth
+		setHighlighterStyle(h => {
+			return {
+				...h,
+				left: pageLeft + (pageWidth / 2) - (newHighlighterWidth / 2),
+				width: newHighlighterWidth
+			}
 		});
 
 	}, [selectedPage]);
 
-	// wait to show highlighter until positioning is done
+	// wait to show highlighter until initial positioning is done
 	useEffect(() => {
 		setTimeout(() => {
 			setHighlighterStyle(style =>{
@@ -57,8 +66,10 @@ export const NavBar = () => {
 		<div className="title">Title</div>
 		<div className="pages">
 			{ pages.map((p, i) => (
-				<div key={i} id={p.name} onClick={() => setSelectedPage(p.name)}>
-					{p.name}
+				<div key={i} id={p.name}>
+					<Link to={p.route} onClick={() => setSelectedPage(p.name)}>
+						{p.name}
+					</Link>
 				</div>
 			)) }
 			<div id="highlighter" style={highlighterStyle}></div>

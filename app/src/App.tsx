@@ -1,24 +1,73 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
 	BrowserRouter as Router,
 	Switch,
-	Route
+	Route,
+	useLocation
 } from 'react-router-dom';
+
+import './App.scss';
 
 import { NavBar } from './components/NavBar';
 import { Jobs } from './components/Jobs';
 import { Projects } from './components/Projects';
+import { Page } from './components/Page';
+
+function Main() {
+	const location = useLocation();
+	const [component, setComponent] = useState<JSX.Element>();
+	const [nextComponent, setNextComponent] = useState<JSX.Element | null>(null);
+
+	const isFirstRun = useRef(true);
+
+	const getComponent = () => {
+		let newComponent = () => <div>empty</div>;
+		switch(location.pathname) {
+			case '/':
+				newComponent = Jobs;
+				break;
+			case '/projects':
+				newComponent = Projects;
+				break;
+		}
+		return newComponent;
+	}
+
+	useEffect(() => {
+		if (isFirstRun.current) {
+			isFirstRun.current = false;
+			setComponent(getComponent());
+			return;
+		}
+		setNextComponent(getComponent());
+
+	}, [location.pathname])
+
+	const loadNextComponent = () => {
+		if (nextComponent) {
+			setComponent(nextComponent);
+			setNextComponent(null);
+		}
+	}
+
+	return (
+		<div id="main">
+			<Page fadeOut={!!nextComponent} onFadeOut={loadNextComponent}>{component}</Page>
+			{nextComponent && <Page fadeIn={true}>{nextComponent}</Page>}
+		</div>
+	)
+}
 
 function App() {
-  return (
-	<Router>
-		<NavBar />
-		<Switch>
-			<Route exact path="/" component={Jobs}></Route>
-			<Route path="/projects" component={Projects}></Route>
-		</Switch>
-	</Router>
-  );
+
+
+
+	return (
+		<Router>
+			<NavBar />
+			<Main />
+		</Router>
+	);
 }
 
 export default App;

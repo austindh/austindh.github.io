@@ -1,0 +1,31 @@
+.page {
+	background: white;
+	padding: 15px;
+	box-shadow: 1px 1px 6px 0px #0000002b;
+	opacity: 1;
+
+	&.fade-in {
+		margin-top: 50px;
+		opacity: 0;
+		transition: 
+			margin 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+			opacity 1s;
+	}
+	
+	&.show {
+		margin-top: unset;
+		opacity: 1;
+	}
+
+	&.fade-out {
+		transition: opacity 1s;
+		position: absolute;
+		left: 20px;
+		right: 20px;
+	}
+
+	&.fade {
+		opacity: 0;
+	}
+
+}
