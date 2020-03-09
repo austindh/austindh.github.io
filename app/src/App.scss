@@ -2,8 +2,17 @@
 	position: relative;
 	flex-grow: 1;
 	padding: 20px;
-	background: #eeeeee;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	opacity: 0;
+	transition: 
+		opacity 1s,
+		padding-top 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	padding-top: 70px;
+
+	&.show {
+		opacity: 1;
+		padding-top: 20px;
+	}
 }

@@ -58,18 +58,25 @@ function Main() {
 		}
 	}
 
+	const [mainClass, setMainClass] = useState('');
+	useEffect(() => {
+		setTimeout(() => {
+			setMainClass('show');
+		}, 200);
+	}, [])
+
 	return (
-    <div id="main">
-      <Page
-        className="current"
-        fadeOut={!!nextComponent}
-        width={pageWidth}
-        onFadeOut={loadNextComponent}
-      >
-        {component}
-      </Page>
-      {nextComponent && <Page fadeIn={true}>{nextComponent}</Page>}
-    </div>
+		<div id="main" className={mainClass}>
+		<Page
+			className="current"
+			fadeOut={!!nextComponent}
+			width={pageWidth}
+			onFadeOut={loadNextComponent}
+		>
+			{component}
+		</Page>
+		{nextComponent && <Page fadeIn={true}>{nextComponent}</Page>}
+		</div>
   );
 }
 
