@@ -33,15 +33,23 @@ function Main() {
 		return newComponent;
 	}
 
+	const [pageWidth, setPageWidth] = useState(0);
 	useEffect(() => {
 		if (isFirstRun.current) {
 			isFirstRun.current = false;
 			setComponent(getComponent());
 			return;
 		}
+		const current = document.querySelector('.current');
+		if (current) {
+			setPageWidth(current.clientWidth);
+		}
 		setNextComponent(getComponent());
 
-	}, [location.pathname])
+	}, [location.pathname]);
+
+	useEffect(() => {
+	});
 
 	const loadNextComponent = () => {
 		if (nextComponent) {
@@ -51,11 +59,18 @@ function Main() {
 	}
 
 	return (
-		<div id="main">
-			<Page fadeOut={!!nextComponent} onFadeOut={loadNextComponent}>{component}</Page>
-			{nextComponent && <Page fadeIn={true}>{nextComponent}</Page>}
-		</div>
-	)
+    <div id="main">
+      <Page
+        className="current"
+        fadeOut={!!nextComponent}
+        width={pageWidth}
+        onFadeOut={loadNextComponent}
+      >
+        {component}
+      </Page>
+      {nextComponent && <Page fadeIn={true}>{nextComponent}</Page>}
+    </div>
+  );
 }
 
 function App() {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import './Page.scss';
-import { useLocation } from 'react-router';
 import clsx from 'clsx';
 
 interface PageProps {
@@ -9,6 +8,8 @@ interface PageProps {
 	fadeOut?: boolean
 	onFadeOut?: () => void
 	fadeIn?: boolean
+	className?: string
+	width?: number
 }
 
 export const Page = (props: PageProps) => {
@@ -43,42 +44,13 @@ export const Page = (props: PageProps) => {
 		}
 	}, [props.fadeIn]);
 
-	// useEffect(() => {
-	// 	if (isFadingIn) {
-	// 		setTimeout(() => {
-	// 			setFadingIn(false);
-	// 		}, 500)
-	// 	}
-	// }, [isFadingIn])
-
-	// useEffect(() => {
-	// 	if (props.fadeIn) {
-	// 		setFadingIn(true);
-	// 	}
-	// }, [props.fadeIn])
-	
-	// useEffect(() => {
-	// 	if (isFadingIn) {
-	// 		setClasses(['page']);
-	// 		setClasses(c => [...c, 'show']);
-	// 	} else {
-
-	// 	}
-	// }, [isFadingIn]);
-
-	// useEffect(() => {
-	// 	if (props.fadeOut) {
-	// 		setClasses(['page', 'show']);
-	// 	}
-	// }, [props.fadeOut]);
-
 	return (
-		<div className={clsx('page', {
+		<div className={clsx(props.className, 'page', {
 			'fade-out': props.fadeOut,
 			'fade': isFadingOut,
 			'fade-in': props.fadeIn,
 			'show': isFadingIn
-		})}>
+		})} style={{ width: props.fadeOut ? props.width : '' }}>
 			{props.children}
 		</div>
 	)
