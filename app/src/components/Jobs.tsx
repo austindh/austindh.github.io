@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 
 import './Jobs.scss';
 import { Page } from './Page';
+import clsx from 'clsx';
 
 export const Jobs = () => {
 	// myJobs.sort((a, b) => {
@@ -23,10 +24,10 @@ export const Jobs = () => {
 		return format(x, 'MMM yy');
 	}
 
-	const jobs = myJobs.map(j => (
-		<div key={j.companyName} className="job">
-			<div className="company">{j.companyName}</div>
-			{j.titles.map((t, i) => (
+	const jobs = myJobs.map((job, i) => (
+		<div key={job.companyName} className={clsx('card', 'job', `card-${i}`)}>
+			<div className="company">{job.companyName}</div>
+			{job.titles.map((t, i) => (
 				<div className="title" key={i}>
 					<div className="name">{t.title}</div>
 					<div className="start-end">
@@ -36,7 +37,7 @@ export const Jobs = () => {
 					</div>
 				</div>
 			))}
-			{j.responsibilities.map((r, i) => (
+			{job.responsibilities.map((r, i) => (
 				<div key={i} className="responsibility">{r}</div>
 			))}
 		</div>

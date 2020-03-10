@@ -4,6 +4,6 @@ import { Page } from './Page';
 
 export const Projects = () => {
 	return (
-		<div>Projects</div>
+		<div className="card">Projects</div>
 	);
 };

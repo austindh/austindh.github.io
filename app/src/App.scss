@@ -35,3 +35,34 @@ $paddingTop: 30px;
 .shadow {
 	box-shadow: 1px 1px 7px 2px #00000036;
 }
+
+$cardStartMargin: 150px;
+$cardEndMargin: 30px;
+
+.current .card {
+	margin-bottom: $cardEndMargin;
+}
+
+.next .card {
+	animation-name: card-bottom-margin;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@for $i from 1 through 20 {
+	.card-#{$i} {
+		animation-delay: .1s * $i;
+	}
+}
+
+.card {
+	@extend .shadow;
+	background: white;
+	padding: 15px;
+}
+
+@keyframes card-bottom-margin {
+	from { margin-bottom: $cardStartMargin; }
+	to { margin-bottom: $cardEndMargin; }
+}

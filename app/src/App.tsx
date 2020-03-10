@@ -21,7 +21,7 @@ function Main() {
 	const isFirstRun = useRef(true);
 
 	const getComponent = () => {
-		let newComponent = () => <div>empty</div>;
+		let newComponent = () => <div className="card">empty</div>;
 		switch(location.pathname) {
 			case '/':
 				newComponent = Jobs;
@@ -48,8 +48,6 @@ function Main() {
 
 	}, [location.pathname]);
 
-	useEffect(() => {
-	});
 
 	const loadNextComponent = () => {
 		if (nextComponent) {
@@ -75,7 +73,7 @@ function Main() {
 		>
 			{component}
 		</Page>
-		{nextComponent && <Page fadeIn={true}>{nextComponent}</Page>}
+		{nextComponent && <Page className="next" fadeIn={true}>{nextComponent}</Page>}
 		</div>
   );
 }
