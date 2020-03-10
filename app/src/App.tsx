@@ -40,22 +40,22 @@ function Main() {
 	const isFirstRun = useRef(true);
 
 	const getComponent = () => {
-		let newComponent = () => <div className="card">empty</div>;
+		let newComponent = <div className="card">empty</div>;
 		switch(location.pathname) {
 			case '/work':
-				newComponent = Jobs;
+				newComponent = <Jobs />;
 				break;
 			case '/projects':
-				newComponent = Projects;
+				newComponent = <Projects />;
 				break;
 			case '/skills':
-				newComponent = Skills;
+				newComponent = <Skills />;
 				break;
 			case '/':
-				newComponent = AboutMe;
+				newComponent = <AboutMe />;
 				break;
 		}
-		return newComponent();
+		return newComponent;
 	}
 
 	const [pageWidth, setPageWidth] = useState(0);
@@ -72,16 +72,15 @@ function Main() {
 			return;
 		}
 
-		// if (isTransitioning.current) {
-			// return;
-		// }
-
-		// isTransitioning.current = true;
 		const current = document.querySelector('.current');
 		if (current) {
 			setPageWidth(current.clientWidth);
 		}
 		addNextComponent(getComponent());
+		const main = document.querySelector('#main');
+		if (main) {
+			main.scrollTop = 0;
+		}
 		// setNextComponent(getComponent());
 
 	}, [location.pathname, manualUpdate]);
@@ -102,16 +101,20 @@ function Main() {
 		}, 200);
 	}, [])
 
+	// const current = currentComponent?.component.props.tag;
+
 	return (
 		<div id="main" className={mainClass}>
-		<Page
-			className={clsx('current', currentComponent?.className)}
-			fadeOut={!!nextComponent}
-			width={pageWidth}
-			onFadeOut={transitionComplete}
-		>
-			{currentComponent?.component}
-		</Page>
+		{currentComponent && 
+			<Page
+				className={clsx('current', currentComponent.className)}
+				fadeOut={!!nextComponent}
+				width={pageWidth}
+				onFadeOut={transitionComplete}
+			>
+				{currentComponent.component}
+			</Page>
+		}
 		{/* Next component will be first one added for animation to complete */}
 		{nextComponent && <Page className="next" fadeIn={true}>{nextComponent[0]}</Page>}
 		</div>

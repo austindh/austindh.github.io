@@ -1,0 +1,24 @@
+#about-me {
+	padding: 50px;
+
+	.pic {
+		z-index: 1;
+	}
+
+	.pic-clone {
+		z-index: 0;
+	}
+
+	img {
+		$size: 200px;
+		height: $size;
+		width: $size;
+		object-fit: cover;
+		object-position: 0 -8px;
+		border-radius: 300px;
+	}
+
+	.pic-wrapper {
+		justify-content: unset;
+	}
+}
