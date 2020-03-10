@@ -26,20 +26,32 @@ export const Jobs = () => {
 
 	const jobs = myJobs.map((job, i) => (
 		<div key={job.companyName} className={clsx('card', 'job', `card-${i}`)}>
-			<div className="company">{job.companyName}</div>
-			{job.titles.map((t, i) => (
-				<div className="title" key={i}>
-					<div className="name">{t.title}</div>
-					<div className="start-end">
-						<span className="start">{formatStartEnd(t.start)}</span>
-						-
-						<span className="end">{formatStartEnd(t.end)}</span>
+			<div className="left">
+				<div className="company">{job.companyName}</div>
+				{job.titles.map((t, i) => (
+					<div className="title" key={i}>
+						<div className="name">{t.title}</div>
+						<div className="start-end">
+							<span className="start">{formatStartEnd(t.start)}</span>
+							-
+							<span className="end">{formatStartEnd(t.end)}</span>
+						</div>
 					</div>
+				))}
+				<div className="spacer"></div>
+				<div className="tech">
+					{job.tech.map((t, i) => (
+						<div key={i}>{t}</div>
+					))}
 				</div>
-			))}
-			{job.responsibilities.map((r, i) => (
-				<div key={i} className="responsibility">{r}</div>
-			))}
+			</div>
+			<div className="right">
+				<ul>
+					{job.responsibilities.map((r, i) => (
+						<li key={i} className="responsibility">{r}</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	));
 

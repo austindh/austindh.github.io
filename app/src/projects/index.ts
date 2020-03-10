@@ -13,4 +13,9 @@ interface Project {
 	- guitar chords
  */
 
-export const myProjects: Project[] = [];
+export const myProjects: Project[] = [
+	{ name: 'IPC' },
+	{ name: 'Fabric Inventory' },
+	{ name: 'Home Automation' },
+	{ name: 'austinhughes.me' },
+];

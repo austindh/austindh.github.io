@@ -9,9 +9,10 @@ export interface Job {
 	companyName: string
 	location: string
 	responsibilities: string[]
+	tech: string[]
 }
 
-export const myJobs = [
+export const myJobs: Job[] = [
 	{
 		companyName: "BYU Center for Teaching & Learning",
 		location: "Provo, UT",
@@ -26,7 +27,8 @@ export const myJobs = [
 			"Worked as part of team of front-end developers to improve and maintain Learning Suite, a learning management system (LMS) used daily by approximately 35,000 BYU faculty members and students",
 			"Implemented user interface and functionality using HTML, SCSS, JavaScript (jQuery, Backbone.js, Handlebars.js), and PHP",
 			"Implemented site-wide audio and video support update, including adding codec detection, in-browser feature detection, and QuickTime integration"
-		]
+		],
+		tech: ['HTML', 'SCSS', 'JavaScript', 'jQuery', 'Backbone.js', 'Handlebars.js', 'PHP']
 	},
 	{
 		companyName: 'MemoryMail',
@@ -43,7 +45,8 @@ export const myJobs = [
 			'Implemented web application using the MEAN (MongoDB, Express, AngularJS, and Node.js) stack',
 			'Integrated log in and email access with Google and Gmail',
 			'Integrated payments using Stripe'
-		]
+		],
+		tech: ['MongoDB', 'Express', 'AngularJS', 'Node.js']
 	},
 	{
 		companyName: 'Clearwater Analytics',
@@ -59,7 +62,8 @@ export const myJobs = [
 			'Worked as part of a team to implement internal web services using Java (Jersey) and Microsoft SQL Server',
 			'Wrote unit tests, integration tests, and database stored procedures',
 			'Implemented front-end user interfaces using jQuery and AngularJS'
-		]
+		],
+		tech: ['Java (Jersey)', 'Microsoft SQL', 'jQuery', 'AngularJS']
 	},
 	{
 		companyName: 'Xactware',
@@ -89,7 +93,8 @@ export const myJobs = [
 			'Migrated entire JavaScript codebase to TypeScript (approximately 40,000 LOC)',
 			'Worked as part of a team of developers on an Angular application',
 			'Worked as part of a team of developers on a React application'
-		]
+		],
+		tech: ['C# (.NET)', 'Oracle SQL', 'AngularJS', 'Bootstrap', 'TypeScript', 'Angular', 'React', 'Babel']
 	}
 ];
 

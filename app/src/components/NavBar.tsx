@@ -10,9 +10,10 @@ export const NavBar = () => {
 		route: string;
 	}
 	const pages: Page[] = [
-		{ name: "Work", route: "/" },
+		{ name: 'Home', route: '/' },
+		{ name: "Work Experience", route: "/work" },
 		{ name: "Projects", route: "/projects" },
-		{ name: 'Longer name here', route: '/test' }
+		{ name: 'Skills', route: '/skills' },
 	];
 
 	const { pathname } = useLocation();

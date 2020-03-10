@@ -12,46 +12,85 @@ import { NavBar } from './components/NavBar';
 import { Jobs } from './components/Jobs';
 import { Projects } from './components/Projects';
 import { Page } from './components/Page';
+import { Skills } from './components/Skills';
+import { AboutMe } from './components/AboutMe';
+import clsx from "clsx";
 
 function Main() {
 	const location = useLocation();
-	const [component, setComponent] = useState<JSX.Element>();
-	const [nextComponent, setNextComponent] = useState<JSX.Element | null>(null);
+	
+	interface CurrentComponent {
+		className?: string
+		component: JSX.Element
+	}
+	const [currentComponent, setCurrentComponent] = useState<CurrentComponent>();
+	const [nextComponent, setNextComponent] = useState<JSX.Element[] | null>(null);
+
+	const addNextComponent = (component: JSX.Element) => {
+		setNextComponent(components => {
+			if (components) {
+				components.push(component);
+				return components;
+			} else {
+				return [component];
+			}
+		});
+	}
 
 	const isFirstRun = useRef(true);
 
 	const getComponent = () => {
 		let newComponent = () => <div className="card">empty</div>;
 		switch(location.pathname) {
-			case '/':
+			case '/work':
 				newComponent = Jobs;
 				break;
 			case '/projects':
 				newComponent = Projects;
 				break;
+			case '/skills':
+				newComponent = Skills;
+				break;
+			case '/':
+				newComponent = AboutMe;
+				break;
 		}
-		return newComponent;
+		return newComponent();
 	}
 
 	const [pageWidth, setPageWidth] = useState(0);
+	const [manualUpdate, setManualUpdate] = useState(false);
+	// const isTransitioning = useRef(false);
 	useEffect(() => {
+
 		if (isFirstRun.current) {
 			isFirstRun.current = false;
-			setComponent(getComponent());
+			setCurrentComponent({
+				className: 'first',
+				component: getComponent()
+			});
 			return;
 		}
+
+		// if (isTransitioning.current) {
+			// return;
+		// }
+
+		// isTransitioning.current = true;
 		const current = document.querySelector('.current');
 		if (current) {
 			setPageWidth(current.clientWidth);
 		}
-		setNextComponent(getComponent());
+		addNextComponent(getComponent());
+		// setNextComponent(getComponent());
 
-	}, [location.pathname]);
+	}, [location.pathname, manualUpdate]);
 
 
-	const loadNextComponent = () => {
+	const transitionComplete = () => {
 		if (nextComponent) {
-			setComponent(nextComponent);
+			// Always grab latest next component to switch out (in case of fast navigation)
+			setCurrentComponent({ component: nextComponent.slice(-1)[0] });
 			setNextComponent(null);
 		}
 	}
@@ -66,21 +105,20 @@ function Main() {
 	return (
 		<div id="main" className={mainClass}>
 		<Page
-			className="current"
+			className={clsx('current', currentComponent?.className)}
 			fadeOut={!!nextComponent}
 			width={pageWidth}
-			onFadeOut={loadNextComponent}
+			onFadeOut={transitionComplete}
 		>
-			{component}
+			{currentComponent?.component}
 		</Page>
-		{nextComponent && <Page className="next" fadeIn={true}>{nextComponent}</Page>}
+		{/* Next component will be first one added for animation to complete */}
+		{nextComponent && <Page className="next" fadeIn={true}>{nextComponent[0]}</Page>}
 		</div>
   );
 }
 
 function App() {
-
-
 
 	return (
 		<Router>

@@ -43,17 +43,20 @@ $cardEndMargin: 30px;
 	margin-bottom: $cardEndMargin;
 }
 
-.next .card {
-	animation-name: card-bottom-margin;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
-	animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+.next, .first {
+	.card {
+		animation-name: card-bottom-margin;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
 }
 
 @for $i from 1 through 20 {
 	.card-#{$i} {
-		animation-delay: .1s * $i;
+		animation-delay: 0.1s * $i;
 	}
+	
 }
 
 .card {
