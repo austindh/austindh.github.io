@@ -1,3 +1,5 @@
+$paddingTop: 30px;
+
 #main {
 	position: relative;
 	flex-grow: 1;
@@ -9,10 +11,27 @@
 	transition: 
 		opacity 1s,
 		padding-top 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-	padding-top: 70px;
+	padding-top: $paddingTop + 50px;
+	overflow: auto;
 
 	&.show {
 		opacity: 1;
-		padding-top: 20px;
+		padding-top: $paddingTop;
 	}
+
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+	&::-webkit-scrollbar-track {
+		// -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+		background: lightgray;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		// outline: 1px solid slategrey;
+	}
+}
+
+.shadow {
+	box-shadow: 1px 1px 7px 2px #00000036;
 }

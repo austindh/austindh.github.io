@@ -45,7 +45,7 @@ export const Page = (props: PageProps) => {
 	}, [props.fadeIn]);
 
 	return (
-		<div className={clsx(props.className, 'page', {
+		<div className={clsx(props.className, 'page', 'shadow', {
 			'fade-out': props.fadeOut,
 			'fade': isFadingOut,
 			'fade-in': props.fadeIn,

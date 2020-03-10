@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from 'react-router-dom';
 
 import "./NavBar.scss";
+import clsx from "clsx";
 
 export const NavBar = () => {
 	interface Page {
@@ -37,7 +38,7 @@ export const NavBar = () => {
 
 		const pageLeft = pageLink.offsetLeft;
 		const pageWidth = pageLink.clientWidth;
-		const newHighlighterWidth = pageWidth - 15;
+		const newHighlighterWidth = pageWidth - 25;
 
 		setHighlighterStyle(h => {
 			return {
@@ -62,11 +63,13 @@ export const NavBar = () => {
 	}, [])
 
 	return (
-		<div id="top-nav">
-		<div className="title">Title</div>
+		<div id="top-nav" className="shadow">
+		<div className="title">Austin Hughes</div>
 		<div className="pages">
 			{ pages.map((p, i) => (
-				<div key={i} id={p.name}>
+				<div key={i} id={p.name} className={clsx({
+					active: p.name === selectedPage
+				})}>
 					<Link to={p.route} onClick={() => setSelectedPage(p.name)}>
 						{p.name}
 					</Link>

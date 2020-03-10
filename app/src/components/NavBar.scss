@@ -1,23 +1,42 @@
 #top-nav {
 	background: lightgray;
 	display: flex;
-	padding: 15px 20px;
+	// padding: 15px 20px;
+	// width: 100%;
+	// position: sticky;
+	top: 0;
+	z-index: 1;
+	// box-shadow: 1px 1px 3px #0000001f;
+	background: white;
+	color: #757575;
 
 	.pages {
 		// border: solid 1px gray;
-		margin-left: 20px;
+		// margin-left: 20px;
 		display: flex;
 		align-items: center;
 		position: relative;
+		margin: 16px;
+		margin-bottom: 10px;
 
 		> div {
 			// border: solid 1px blue;
-			padding: 0 15px;
+			padding: 0 30px;
 			// margin: 0 10px;
+			transition: all 0.5s;
+
+			&:hover {
+				color: black;
+			}
 
 			a {
 				color: unset;
 				text-decoration: none;
+			}
+
+			&.active {
+				color: black;
+				font-weight: bold;
 			}
 		}
 
@@ -26,7 +45,7 @@
 			bottom: 0;
 			width: 0px;
 			height: 3px;
-			background: #58a2ff;
+			background: #ff8400;
 			transition: 
 				left 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55),
 				width 0.5s ease-in-out,
@@ -36,7 +55,22 @@
 	}
 
 	.title {
-		font-size: 1.5em;
-		margin-right: 10px;
+		font-size: 32px;
+		margin-right: 50px;
+		// font-weight: bold;
+		font-family: 'Titillium Web', sans-serif;
+		font-family: 'Nunito', sans-serif;
+		font-family: 'Sen', sans-serif;
+		font-family: 'Muli', sans-serif;
+		font-family: 'Barlow', sans-serif;
+		// text-shadow: 2px 2px 8px #00000038;
+		margin-top: -5px;
+		// background: linear-gradient(to bottom right, #ff8400, #4d0606);
+		// background: linear-gradient(to bottom right, #ff8400, #820909);
+		// background: linear-gradient(to top left, #ff8400, #820909);
+		// background: linear-gradient(to top left, #0a4686, #0a8683);
+		// color: white;
+		padding: 15px;
+		color: black;
 	}
 }
