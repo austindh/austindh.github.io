@@ -44,7 +44,9 @@
 		}
 		
 		.icon {
-			height: 24px;
+			$size: 24px;
+			height: $size;
+			width: $size;
 			margin-right: 10px;
 		}
 		
