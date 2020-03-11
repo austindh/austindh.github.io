@@ -1,5 +1,5 @@
 #about-me {
-	padding: 50px;
+	display: flex;
 
 	.pic {
 		z-index: 1;
@@ -9,7 +9,7 @@
 		z-index: 0;
 	}
 
-	img {
+	img.profile {
 		$size: 200px;
 		height: $size;
 		width: $size;
@@ -19,6 +19,58 @@
 	}
 
 	.pic-wrapper {
-		justify-content: unset;
+		margin-bottom: 10px;
 	}
+
+	.contact {
+		font-size: 0.8em;
+		color: #575757;
+		align-items: center;
+		// display: flex;
+		margin-right: 30px;
+		padding: 15px 25px;
+		padding-top: 30px;
+		
+		.info {
+			margin-top: 16px;
+
+			> div {
+				display: flex;
+				// justify-content: center;
+				align-items: center;
+				margin-bottom: 8px;
+	
+			}
+		}
+		
+		.icon {
+			height: 24px;
+			margin-right: 10px;
+		}
+		
+	}
+
+	.paragraph {
+		flex-grow: 1;
+		height: 100%;
+	}
+}
+
+.first, .next {
+	.paragraph {
+		animation-name: margin-top;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+
+	@keyframes margin-top {
+		from { margin-top: 70px; }
+		to { margin-top: 0; }
+	}
+}
+
+.first .paragraph {
+	margin-top: 70px;
+	animation-delay: 0.2s;
 }
