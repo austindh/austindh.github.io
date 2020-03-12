@@ -6,17 +6,14 @@ import './AboutMe.scss';
 export const AboutMe = () => {
 
 	useEffect(() => {
-		console.log('hey');
-		// setTimeout(() => {
-			cosha({
-				className: 'pic',
-				blur: '10px',
-				brightness: 1,
-				saturation: 1,
-				x: 0,
-				y: 0
-			})
-		// }, 500)
+		cosha({
+			className: 'pic',
+			blur: '10px',
+			brightness: 1,
+			saturation: 1,
+			x: 0,
+			y: 0
+		})
 	}, []);
 
 	return (

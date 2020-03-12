@@ -57,7 +57,8 @@ export const myProjects: Project[] = [
 	{ 
 		name: 'Fabric Inventory',
 		summary: `A web application to track my wife's inventory of fabric for her Etsy shop`,
-		tech: ['React', 'TypeScript', 'Material-UI', 'Node.js', 'Express', 'SQLite']
+		tech: ['React', 'TypeScript', 'Material-UI', 'Node.js', 'Express', 'SQLite'],
+		pics: ['fabric-inventory.png']
 	},
 	{ 
 		name: 'Home Automation',

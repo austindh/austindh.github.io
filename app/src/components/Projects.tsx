@@ -1,18 +1,23 @@
 import React from "react";
+import clsx from "clsx";
 
 import { Page } from './Page';
-
+import { TechList } from './TechList';
+import { ProjectPicture } from './ProjectPicture';
 import { myProjects } from '../projects';
-import clsx from "clsx";
+
+
+import './Projects.scss';
 
 export const Projects = () => {
 	return (
-		<div>
+		<div id="projects">
 			{myProjects.map((p, i) => (
 				<div key={p.name} className={clsx('card', `card-${i}`)}>
-					<div className="title">{p.name}</div>
+					<div className="card-title">{p.name}</div>
 					<div className="summary">{p.summary}</div>
-					{ p.tech.map((t, i) => (<div className="tech" key={i}>{t}</div>)) }
+					{ p.pics && <ProjectPicture src={p.pics[0]} /> }
+					<TechList tech={p.tech} />
 				</div>
 			))}
 		</div>
