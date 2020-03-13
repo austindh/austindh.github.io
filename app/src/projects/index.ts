@@ -63,7 +63,7 @@ export const myProjects: Project[] = [
 	{ 
 		name: 'Home Automation',
 		summary: 'My home automation project. What started as a simple Node.js server on a Raspberry Pi has expanded to an external facing server hosted on AWS and a local server running on an Intel NUC.',
-		tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Python', 'AWS', 'MongoDB', 'Postgres', 'SQLite']
+		tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Python', 'AWS', 'Nginx', 'MongoDB', 'Postgres', 'SQLite']
 	},
 	{ 
 		name: 'austinhughes.me',

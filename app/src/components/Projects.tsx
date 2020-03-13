@@ -16,7 +16,7 @@ export const Projects = () => {
 				<div key={p.name} className={clsx('card', `card-${i}`)}>
 					<div className="card-title">{p.name}</div>
 					<div className="summary">{p.summary}</div>
-					{ p.pics && <ProjectPicture src={p.pics[0]} /> }
+					{ p.pics && <ProjectPicture src={ p.pics[0] } /> }
 					<TechList tech={p.tech} />
 				</div>
 			))}
