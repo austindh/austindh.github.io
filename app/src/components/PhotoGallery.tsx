@@ -11,19 +11,21 @@ interface PhotoGalleryProps {
 
 export const PhotoGallery = (props: PhotoGalleryProps) => {
 
+	const [isOpen, setIsOpen] = useState(false);
 	const [selectedPhoto, setSelectedPhoto] = useState<ProjectPic | null>(null);
-	const [lastSelectedPhoto, setLastSelectedPhoto] = useState<ProjectPic>();
+	// const [lastSelectedPhoto, setLastSelectedPhoto] = useState<ProjectPic | null>(null);
 	const [fullBackdropHeight, setfullBackdropHeight] = useState(false);
 
 	const onClick = (p: ProjectPic) => {
 		setSelectedPhoto(p);
-		setLastSelectedPhoto(p);
+		setIsOpen(true);
 		setfullBackdropHeight(true);
 	};
 
 	const backdropClick = () => {
-		setSelectedPhoto(null);
+		setIsOpen(false);
 		setTimeout(() => {
+			setSelectedPhoto(null);
 			setfullBackdropHeight(false);
 		}, 300);
 	}
@@ -38,12 +40,18 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 				))}
 			</div>
 			<div className={clsx('photo-viewer-backdrop', {
-				visible: selectedPhoto,
+				visible: isOpen,
 				'full-height': fullBackdropHeight
 			})} onClick={backdropClick}>
+
 				{/* <Page> */}
-					<div className="card">
-						<img src={selectedPhoto?.url || lastSelectedPhoto?.url}></img>
+					<div className="shadow current-photo">
+						<div className="img" style={{
+							backgroundImage: `url(${selectedPhoto?.url})`
+						}}>
+							{/* <img className="shadow" src={selectedPhoto?.url}></img> */}
+						</div>
+						<div className="bottom">{selectedPhoto?.caption}</div>
 					</div>
 				{/* </Page> */}
 			</div>

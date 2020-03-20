@@ -27,7 +27,8 @@
 	z-index: -1;
 	display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	flex-direction: column;
 	
 	&.visible {
 		height: auto;
@@ -46,9 +47,37 @@
 		// margin: 10px;
 	}
 
+	.current-photo {
+		$margin: 75px;
+		background: black;
+		display: flex;
+		flex-direction: column;
+		z-index: 1;
+		width: calc(100% - #{$margin} * 2);
+		height: 100%;
+		margin: $margin 0;
+	}
+
+	.bottom {
+		background: white;
+		font-size: 0.9em;
+		padding: 20px;
+	}
+
+	.img {
+		display: flex;
+		justify-content: center;
+		margin: 20px;
+		box-sizing: border-box;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		flex-grow: 1;
+	}
+
 	img {
-		max-width: 400px;
-		max-height: 400px;
-		object-fit: contain;
+		// max-width: 400px;
+		// max-height: 400px;
+		// object-fit: contain;
 	}
 }

@@ -21,6 +21,7 @@ export interface Project {
 	- austinhughes.me
 
 	future:
+	- Rullo solver
 	- neapolitanmakes.com
 	- guitar chords
 */
