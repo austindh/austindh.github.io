@@ -34,12 +34,17 @@
 		.info {
 			margin-top: 16px;
 
-			> div {
+			a {
+				color: #757575;
+				text-decoration: none;
 				display: flex;
 				// justify-content: center;
 				align-items: center;
 				margin-bottom: 8px;
-	
+
+				&:hover {
+					color: black;
+				}
 			}
 		}
 		
@@ -55,6 +60,7 @@
 	.paragraph {
 		flex-grow: 1;
 		height: 100%;
+		font-size: 0.9em;
 	}
 }
 
