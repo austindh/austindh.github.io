@@ -1,9 +1,11 @@
 import { Automation } from './Automation';
 import { FabricInventory } from './FabricInventory';
+import { WorkerProductivity } from './WorkerProductivity';
 
 export interface ProjectPic {
 	url: string
 	caption?: string
+	isMain?: boolean
 }
 
 export interface Project {
@@ -31,11 +33,7 @@ export interface Project {
 
 export const myProjects: Project[] = [
 	Automation,
-	{ 
-		name: 'IPC',
-		summary: 'A web application to track worker productivity at a custom metal casting facility.',
-		tech: ['React', 'TypeScript', 'Material-UI', 'Node.js', 'Express', 'SQLite']
-	},
+	WorkerProductivity,
 	FabricInventory,
 	{ 
 		name: 'austinhughes.me',

@@ -1,9 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { Page } from './Page';
 import { TechList } from './TechList';
-import { ProjectPicture } from './ProjectPicture';
 import { myProjects } from '../projects';
 import { PhotoGallery } from './PhotoGallery';
 

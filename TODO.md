@@ -9,6 +9,7 @@
 
 ### In Progress
 
+- [ ] Update styling on PhotoGallery to make large photos and captions look better at all screen widths  
 
 ### Done ✓
 

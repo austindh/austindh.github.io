@@ -23,7 +23,7 @@
 	right: 0;
 	opacity: 0;
 	transition: opacity 0.3s;
-	background: #000000d1;
+	background: #00000078;
 	z-index: -1;
 	display: flex;
     justify-content: center;
@@ -49,7 +49,7 @@
 
 	.current-photo {
 		$margin: 75px;
-		background: black;
+		background: white;
 		display: flex;
 		flex-direction: column;
 		z-index: 1;
@@ -62,12 +62,26 @@
 		background: white;
 		font-size: 0.9em;
 		padding: 20px;
+		margin: 0 75px;
+	}
+
+	.photo {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		flex-grow: 1;
+	}
+
+	.count {
+		color: gray;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 10px;
 	}
 
 	.img {
-		display: flex;
-		justify-content: center;
-		margin: 20px;
+		// margin: 20px;
 		box-sizing: border-box;
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -75,9 +89,24 @@
 		flex-grow: 1;
 	}
 
-	img {
-		// max-width: 400px;
-		// max-height: 400px;
-		// object-fit: contain;
+	.nav {
+		display: flex;
+		align-items: center;
+		color: #c7c7c7;
+		// color: lighten(#ff8400, 30%);
+		cursor: pointer;
+
+		&:hover {
+			color: gray;
+			color: #ff8400;
+		}
+	
+		svg {
+			$size: 75px;
+			padding: 0;
+			height: $size;
+			width: $size;
+			fill: currentColor;
+		}
 	}
 }
