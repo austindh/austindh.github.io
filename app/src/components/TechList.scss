@@ -16,28 +16,34 @@
 		// color: white;
 		$bottomBorder: 2px;
 		border-bottom: $bottomBorder solid #989898;
+		$lightPercent: 20%;
+		
+		
+		/** uncomment below to see as pills */
+
+		background: darken(#e7e7e7, 10%);
+		border-radius: 100px;
+		padding: 2px 12px;
+		border-bottom: none!important;
+		$lightPercent: 15%;
+
 
 		&.front-end {
-			// $color: #ff8400;
 			$color: #d573ff;
-			// border-bottom: $bottomBorder solid #ff8400;
 			border-bottom: $bottomBorder solid $color;
-			background: lighten($color: $color, $amount: 20%);
-			// box-shadow: 1px 1px 3px 0px $color;
+			background: lighten($color: $color, $amount: $lightPercent);
 		}
 		
 		&.back-end {
 			$color: #7393ff;
 			border-bottom: $bottomBorder solid $color;
-			background: lighten($color: $color, $amount: 20%);
-			// box-shadow: 1px 1px 3px 0px $color;
+			background: lighten($color: $color, $amount: $lightPercent);
 		}
 		
 		&.database {
 			$color: #ff7373;
 			border-bottom: $bottomBorder solid $color;
-			background: lighten($color: $color, $amount: 20%);
-			// box-shadow: 1px 1px 3px 0px $color;
+			background: lighten($color: $color, $amount: $lightPercent);
 		}
 	}
 

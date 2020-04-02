@@ -16,7 +16,9 @@ export const Projects = () => {
 					<div className="card-title">{p.name}</div>
 					<div className="summary">{p.summary}</div>
 					{ p.pics && <PhotoGallery  pics={p.pics}/> }
-					<TechList tech={p.tech} />
+					<div className="tech">
+						<TechList tech={p.tech} />
+					</div>
 				</div>
 			))}
 		</div>
