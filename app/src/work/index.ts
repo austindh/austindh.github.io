@@ -28,7 +28,7 @@ export const myJobs: Job[] = [
 			"Implemented user interface and functionality using HTML, SCSS, JavaScript (jQuery, Backbone.js, Handlebars.js), and PHP",
 			"Implemented site-wide audio and video support update, including adding codec detection, in-browser feature detection, and QuickTime integration"
 		],
-		tech: ['HTML', 'SCSS', 'JavaScript', 'jQuery', 'Backbone.js', 'Handlebars.js', 'PHP']
+		tech: ['jQuery', 'Backbone.js', 'Handlebars.js', 'PHP']
 	},
 	{
 		companyName: 'MemoryMail',

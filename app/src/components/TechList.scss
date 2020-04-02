@@ -4,13 +4,41 @@
 	font-size: 0.8em;
 
 	.tech {
-		background: lightgray;
-		background: #0a5785;
-		$margin: 5px;
+		background: #e7e7e7;
+		// background: #0a5785;
+		$margin: 10px;
 		margin-right: $margin;
 		margin-bottom: $margin;
 		padding: 2px 10px;
+		// padding-right: 10px;
+		// border: solid 1px #989898;
 		// font-weight: bold;
-		color: white;
+		// color: white;
+		$bottomBorder: 2px;
+		border-bottom: $bottomBorder solid #989898;
+
+		&.front-end {
+			// $color: #ff8400;
+			$color: #d573ff;
+			// border-bottom: $bottomBorder solid #ff8400;
+			border-bottom: $bottomBorder solid $color;
+			background: lighten($color: $color, $amount: 20%);
+			// box-shadow: 1px 1px 3px 0px $color;
+		}
+		
+		&.back-end {
+			$color: #7393ff;
+			border-bottom: $bottomBorder solid $color;
+			background: lighten($color: $color, $amount: 20%);
+			// box-shadow: 1px 1px 3px 0px $color;
+		}
+		
+		&.database {
+			$color: #ff7373;
+			border-bottom: $bottomBorder solid $color;
+			background: lighten($color: $color, $amount: 20%);
+			// box-shadow: 1px 1px 3px 0px $color;
+		}
 	}
+
 }
