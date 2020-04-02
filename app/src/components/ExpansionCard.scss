@@ -1,0 +1,76 @@
+.expansion-card {
+	display: flex;
+	flex-direction: column;
+	transition: all 0.5s;
+
+	.contents {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.top {
+		display: flex;
+		flex-direction: column;
+	}
+
+
+	.top-bar {
+		display: flex;
+		cursor: pointer;
+		justify-content: space-between;
+
+		&:hover .expander svg {
+			color: black;
+		}
+
+		.expander {
+			display: flex;
+			justify-content: flex-end;
+
+			svg {
+				color: #9c9c9c;
+				fill: currentColor;
+				$size: 40px;
+				margin-top: -0.25 * $size;
+				transition: all 0.3s;
+				width: $size;
+				height: $size;
+			}
+
+
+			&.expanded svg {
+				color: black;
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.title {
+		font-size: 0.9em;
+		margin-right: 50px;
+
+		div {
+			display: flex;
+		}
+	}
+
+
+	.bottom {
+		font-size: 0.8em;
+		padding-top: 15px;
+		padding-right: 20px;
+		margin-bottom: 20px;
+
+		ul {
+			margin-top: 0;
+		}
+		max-height: 0;
+		overflow: hidden;
+		transition: all 0.3s ease-in-out;
+
+		&.expanded {
+			max-height: 200px;
+		}
+	}
+
+}
