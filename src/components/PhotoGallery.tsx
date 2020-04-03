@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 
 import './PhotoGallery.scss';
@@ -18,14 +18,26 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 	const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
 	const [fullBackdropHeight, setfullBackdropHeight] = useState(false);
 
+	const onKeyDown = useRef((e: KeyboardEvent) => {
+		if (e.code === 'ArrowRight') {
+			nextPhoto();
+		} else if (e.code === 'ArrowLeft') {
+			prevPhoto();
+		} else if (e.code === 'Escape' || e.code === 'Enter') {
+			closeGallery();
+		}
+	})
+
 	const openGallery = () => {
 		setSelectedPhotoIndex(0);
 		setIsOpen(true);
+		document.addEventListener('keydown', onKeyDown.current);
 		setfullBackdropHeight(true);
 	};
 
-	const backdropClick = () => {
+	const closeGallery = () => {
 		setIsOpen(false);
+		document.removeEventListener('keydown', onKeyDown.current);
 		setTimeout(() => {
 			setfullBackdropHeight(false);
 		}, 300);
@@ -74,7 +86,7 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 			<div className={clsx('photo-viewer-backdrop', {
 				visible: isOpen,
 				'full-height': fullBackdropHeight
-			})} onClick={backdropClick}>
+			})} onClick={closeGallery}>
 				<div className="shadow current-photo" onClick={keepOpen}>
 					<div className="count">
 						{selectedPhotoIndex + 1} of {props.pics.length}
