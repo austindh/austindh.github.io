@@ -76,26 +76,25 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 				'full-height': fullBackdropHeight
 			})} onClick={backdropClick}>
 				<div className="shadow current-photo" onClick={keepOpen}>
-					<div className="photo">
-						<div className="count">
-							{selectedPhotoIndex + 1} of {props.pics.length}
-						</div>
-						{ hasMultiple &&
-							<div className="nav" onClick={prevPhoto}>
-								<Prev />
-							</div>
-						}
-						<div className="img" style={{
-								backgroundImage: `url(${getImageUrl(selectedPhoto.imgName)})`
-							}}>
-						</div>
-						{ hasMultiple && 
-							<div className="nav" onClick={nextPhoto}>
-								<Next />
-							</div>
-						}
+					<div className="count">
+						{selectedPhotoIndex + 1} of {props.pics.length}
 					</div>
-					<div className="bottom">{selectedPhoto?.caption}</div>
+					<div className={clsx('nav', {
+						'show-nav': hasMultiple
+					})} onClick={prevPhoto}>
+						<Prev />
+					</div>
+					<div className="mid">
+						<div className="img-container">
+							<div className="img" style={{backgroundImage: `url(${getImageUrl(selectedPhoto.imgName)})`}}></div>
+						</div>
+						<div className="caption">{selectedPhoto?.caption}</div>
+					</div>
+					<div className={clsx('nav', {
+						'show-nav': hasMultiple
+					})} onClick={nextPhoto}>
+						<Next />
+					</div>
 				</div>
 			</div>
 		</>

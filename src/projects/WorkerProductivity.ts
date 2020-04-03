@@ -23,11 +23,11 @@ export const WorkerProductivity: Project = {
 		},
 		{
 			imgName: 'ipc-filter-part',
-			caption: 'Parts can be filtered by name, part number, or company name. Checkboxes determine if part is currently in production (will determine what shows up on timer screen). The employeed checkboxes determine whether the employee is currently active (if they should be displayed on timer screen).'
+			caption: 'Parts can be filtered by name, part number, or company name. Checkboxes determine if part is currently in production (will determine what shows up on timer screen). The employee checkboxes determine whether the employee is currently active (if they should be displayed on timer screen).'
 		},
 		{
 			imgName: 'ipc-timer',
-			caption: `iPads are located around the facility displaying the timer page. An employeed will select themself from a dropdown, then what station they are working at, and what part they're working on. Then they will start the timer.`
+			caption: `iPads are located around the facility displaying the timer page. An employee will select themself from a dropdown, then what station they are working at, and what part they're working on. Then they will start the timer.`
 		},
 		{
 			imgName: 'ipc-timer2',
