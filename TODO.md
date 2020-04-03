@@ -5,6 +5,7 @@
 
 - [ ] Create SCSS variables file  
 - [ ] Update resume to include website link (austinhughes.me)  
+- [ ] Allow photo captions to be written in Markdown  
 
 ### In Progress
 
