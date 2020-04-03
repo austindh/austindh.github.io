@@ -2,8 +2,10 @@ import { Automation } from './Automation';
 import { FabricInventory } from './FabricInventory';
 import { WorkerProductivity } from './WorkerProductivity';
 
+import { ImageName } from '../img';
+
 export interface ProjectPic {
-	url: string
+	imgName: ImageName
 	caption?: string
 	isMain?: boolean
 }

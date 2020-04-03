@@ -5,8 +5,8 @@ export const Automation: Project = {
 	summary: 'My home automation project. What started as a simple Node.js server on a Raspberry Pi has expanded to an external facing server hosted on AWS and a local server running on an Intel NUC.',
 	tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Python', 'AWS', 'Nginx', 'MongoDB', 'Postgres', 'SQLite'],
 	pics: [{
-		 url: 'automation.png',
-		 caption: 'Basic architecture'
+		imgName: 'automation',
+		caption: 'Basic architecture'
 	}]
 }
 

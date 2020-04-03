@@ -6,6 +6,7 @@ import { ProjectPic } from '../projects';
 import { Page } from './Page';
 import { ReactComponent as Prev } from '../icons/prev.svg';
 import { ReactComponent as Next } from '../icons/next.svg';
+import { getImageUrl, getImageThumbUrl } from '../img/getImage';
 
 interface PhotoGalleryProps {
 	pics: ProjectPic[]
@@ -67,7 +68,7 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 		<>
 			<div className="photo-gallery">
 				<div className="thumb"  onClick={openGallery}>
-					<img src={'img/' + mainPic.url} alt=""/>
+					<img src={getImageThumbUrl(mainPic.imgName)} alt=""/>
 				</div>
 			</div>
 			<div className={clsx('photo-viewer-backdrop', {
@@ -85,7 +86,7 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 							</div>
 						}
 						<div className="img" style={{
-								backgroundImage: `url(img/${selectedPhoto?.url})`
+								backgroundImage: `url(${getImageUrl(selectedPhoto.imgName)})`
 							}}>
 						</div>
 						{ hasMultiple && 

@@ -4,7 +4,6 @@
 ### Todo
 
 - [ ] Update resume to include website link (austinhughes.me)  
-- [ ] Create script to resize images and create thumbnails  
 - [ ] Create SCSS variables file  
 
 ### In Progress
@@ -13,5 +12,6 @@
 
 ### Done ✓
 
+- [x] Create script to resize images and create thumbnails  
 - [x] Fix expansion card to take into account height for expanded section (currently just setting to max height of 300px)  
 

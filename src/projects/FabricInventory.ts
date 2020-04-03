@@ -6,19 +6,19 @@ export const FabricInventory: Project = {
 	tech: ['React', 'TypeScript', 'Material-UI', 'Node.js', 'Express', 'SQLite'],
 	pics: [
 		{ 
-			url: 'fi.png',
+			imgName: 'fi',
 			caption: 'Fabric overview'
 		},
 		{
-			url: 'fi-edit.png',
+			imgName: 'fi-edit',
 			caption: 'Update fabric in stock status, and add tags and notes'
 		},
 		{
-			url: 'fi-filter.png',
+			imgName: 'fi-filter',
 			caption: 'Filter fabric by quantity, tags, or id'
 		},
 		{
-			url: 'fi-pic.png',
+			imgName: 'fi-pic',
 			caption: 'Generate picture to send to customers to show what fabric options are available'
 		}
 	]
