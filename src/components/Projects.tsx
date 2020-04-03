@@ -33,9 +33,7 @@ export const Projects = () => {
 						{ p.pics && <PhotoGallery  pics={p.pics}/> }
 						</>
 					}
-					expandContent={
-						<div>Here is some stuff</div>
-					}
+					expandContent={ p.description }
 					bottomContent={
 						<div className="tech">
 							<TechList tech={p.tech} />

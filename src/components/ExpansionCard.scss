@@ -16,20 +16,20 @@
 
 	.top-bar {
 		display: flex;
-		cursor: pointer;
 		justify-content: space-between;
 		$expandColor: #ff8400;
 		$expandColor: black;
-
+		
 		&:hover .expander svg {
 			color: $expandColor;
 		}
-
+		
 		.expander {
 			display: flex;
 			justify-content: flex-end;
-
+			
 			svg {
+				display: none;
 				color: #9c9c9c;
 				fill: currentColor;
 				$size: 40px;
@@ -38,15 +38,24 @@
 				width: $size;
 				height: $size;
 			}
-
-
+			
+			
 			&.expanded svg {
 				color: $expandColor;
 				transform: rotate(180deg);
 			}
 		}
-	}
 
+		&.has-content {
+			cursor: pointer;
+
+			svg {
+				display: unset;
+			}
+		}
+		
+	}
+	
 	.title {
 		font-size: 0.9em;
 		margin-right: 50px;

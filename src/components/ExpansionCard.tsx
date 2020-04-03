@@ -23,7 +23,7 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 		if (!expandedHeight && expandedRef.current) {
 			setExpandedHeight(expandedRef.current.clientHeight + 20);
 		}
-	});
+	}, [expandedHeight]);
 
 	return (
 		<div className={clsx('card', 'expansion-card', {
@@ -31,7 +31,9 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 		}, ...classes)}>
 			<div className="contents">
 				<div className="top">
-					<div className="top-bar" onClick={() => props.expansionChange(!props.isExpanded)}>
+					<div className={clsx('top-bar', {
+						'has-content': !!props.expandContent
+					})} onClick={() => props.expansionChange(!props.isExpanded)}>
 						<div className="card-title">{props.title}</div>
 						<div className={clsx('expander', {
 							expanded: props.isExpanded
