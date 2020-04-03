@@ -3,9 +3,7 @@ import { myJobs, Job } from '../work';
 import { format } from 'date-fns';
 
 import './Jobs.scss';
-import clsx from 'clsx';
 import { TechList } from './TechList';
-import { ReactComponent as Caret } from '../icons/caret-down.svg';
 
 import { ExpansionCard } from './ExpansionCard';
 
