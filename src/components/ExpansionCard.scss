@@ -18,9 +18,11 @@
 		display: flex;
 		cursor: pointer;
 		justify-content: space-between;
+		$expandColor: #ff8400;
+		$expandColor: black;
 
 		&:hover .expander svg {
-			color: black;
+			color: $expandColor;
 		}
 
 		.expander {
@@ -39,7 +41,7 @@
 
 
 			&.expanded svg {
-				color: black;
+				color: $expandColor;
 				transform: rotate(180deg);
 			}
 		}

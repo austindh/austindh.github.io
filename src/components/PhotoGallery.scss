@@ -119,7 +119,6 @@
 		align-items: center;
 		color: #c7c7c7;
 		// color: lighten(#ff8400, 30%);
-		cursor: pointer;
 		
 		&:hover {
 			color: gray;
@@ -134,8 +133,9 @@
 			width: $size;
 			fill: currentColor;
 		}
-
+		
 		&.show-nav {
+			cursor: pointer;
 			svg {
 				visibility: visible;
 			}
