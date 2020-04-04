@@ -5,13 +5,13 @@
 
 - [ ] Create SCSS variables file  
 - [ ] Update resume to include website link (austinhughes.me)  
-- [ ] Allow photo captions to be written in Markdown  
 
 ### In Progress
 
 
 ### Done ✓
 
+- [x] Allow photo captions to be written in Markdown  
 - [x] Add keyboard navigation to PhotoGallery (arrow keys and escape)  
 - [x] Update styling on PhotoGallery to make large photos and captions look better at all screen widths  
 - [x] Create script to resize images and create thumbnails  

@@ -7,35 +7,35 @@ export const WorkerProductivity: Project = {
 	pics: [
 		{
 			imgName: 'ipc',
-			caption: 'Admin portal to add employees, stations, and parts'
+			caption: '**Admin** - Admin portal to add employees, stations, and parts'
 		},
 		{
 			imgName: 'ipc-employee',
-			caption: 'Add employee with name and picture'
+			caption: '**Admin** - Add employee with name and picture'
 		},
 		{
 			imgName: 'ipc-station',
-			caption: 'Add stations with name and pictures. Some stations have special requirements that can be set here.'
+			caption: '**Admin** - Add stations with name and pictures. Some stations have special requirements that can be set here.'
 		},
 		{
 			imgName: 'ipc-part',
-			caption: 'Add parts with name, company name, and part number. Shown is a placeholder image that will be the default if no image is added. Similar default pictures exist for employees and stations.'
+			caption: '**Admin** - Add parts with name, company name, and part number. Shown is a placeholder image that will be the default if no image is added. Similar default pictures exist for employees and stations.'
 		},
 		{
 			imgName: 'ipc-filter-part',
-			caption: 'Parts can be filtered by name, part number, or company name. Checkboxes determine if part is currently in production (will determine what shows up on timer screen). The employee checkboxes determine whether the employee is currently active (if they should be displayed on timer screen).'
+			caption: '**Admin** - Parts can be filtered by name, part number, or company name. Checkboxes determine if part is currently in production (will determine what shows up on timer screen). The employee checkboxes determine whether the employee is currently active (if they should be displayed on timer screen).'
 		},
 		{
 			imgName: 'ipc-timer',
-			caption: `iPads are located around the facility displaying the timer page. An employee will select themself from a dropdown, then what station they are working at, and what part they're working on. Then they will start the timer.`
+			caption: `**Timer** - iPads are located around the facility displaying the timer page. An employee will select themself from a dropdown, then what station they are working at, and what part they're working on. Then they will start the timer.`
 		},
 		{
 			imgName: 'ipc-timer2',
-			caption: 'Multiple timers can run concurrently. Running timers are saved in localstorage to prevent data loss on page refresh.'
+			caption: '**Timer** - Multiple timers can run concurrently. Running timers are saved in localstorage to prevent data loss on page refresh.'
 		},
 		{
 			imgName: 'ipc-timer3',
-			caption: 'When a worker is finished, they will press stop, then enter how many parts they completed. The submit button will submit the data to the server and remove the timer from the screen.',
+			caption: '**Timer** - When a worker is finished, they will press stop, then enter how many parts they completed. The submit button will submit the data to the server and remove the timer from the screen.',
 			isMain: true
 		},
 		{

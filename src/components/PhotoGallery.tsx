@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import clsx from 'clsx';
+import ReactMarkdown from 'react-markdown';
 
 import './PhotoGallery.scss';
 import { ProjectPic } from '../projects';
-import { Page } from './Page';
 import { ReactComponent as Prev } from '../icons/prev.svg';
 import { ReactComponent as Next } from '../icons/next.svg';
 import { getImageUrl, getImageThumbUrl } from '../img/getImage';
@@ -100,7 +100,9 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 						<div className="img-container">
 							<div className="img" style={{backgroundImage: `url(${getImageUrl(selectedPhoto.imgName)})`}}></div>
 						</div>
-						<div className="caption">{selectedPhoto?.caption}</div>
+						<div className="caption">
+							<ReactMarkdown source={selectedPhoto.caption}/>
+						</div>
 					</div>
 					<div className={clsx('nav', {
 						'show-nav': hasMultiple

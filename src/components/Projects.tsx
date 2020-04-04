@@ -5,6 +5,7 @@ import { TechList } from './TechList';
 import { myProjects, Project } from '../projects';
 import { PhotoGallery } from './PhotoGallery';
 import { ExpansionCard } from './ExpansionCard';
+import ReactMarkdown from 'react-markdown';
 
 import './Projects.scss';
 
@@ -33,7 +34,7 @@ export const Projects = () => {
 						{ p.pics && <PhotoGallery  pics={p.pics}/> }
 						</>
 					}
-					expandContent={ p.description }
+					expandContent={ p.description && <ReactMarkdown source={ p.description } /> }
 					bottomContent={
 						<div className="tech">
 							<TechList tech={p.tech} />
