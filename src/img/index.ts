@@ -3,6 +3,7 @@ export type ImageName =
 	'automation' |
 	'fi-edit' |
 	'fi-filter' |
+	'fi-old' |
 	'fi-pic' |
 	'fi' |
 	'ipc-employee' |

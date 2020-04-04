@@ -16,7 +16,7 @@ interface Tech {
 export const TechList = (props: TechListProps) => {
 	// Sort by tech type (front-end, back-end, etc.) and color code
 	const sortOrder: TechType[] = ['general', 'front-end', 'back-end', 'database'];
-	const frontEndTech = ['angular', 'react', 'bootstrap', 'jquery', 'handlebars', 'backbone', 'material'];
+	const frontEndTech = ['angular', 'react', 'bootstrap', 'jquery', 'handlebars', 'backbone', 'material', 'rxjs'];
 	const backEndTech = ['c#', 'node', 'express', 'php', 'jersey', 'aws', 'nginx'];
 	const dbTech = ['mongo', 'oracle', 'sql', 'postgres']
 
