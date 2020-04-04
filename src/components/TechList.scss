@@ -4,19 +4,8 @@
 	font-size: 0.8em;
 
 	.tech {
-		background: #e7e7e7;
-		// background: #0a5785;
 		$margin: 10px;
 		margin-right: $margin;
-		margin-bottom: $margin;
-		padding: 2px 10px;
-		// padding-right: 10px;
-		// border: solid 1px #989898;
-		// font-weight: bold;
-		// color: white;
-		$bottomBorder: 2px;
-		border-bottom: $bottomBorder solid #989898;
-		$lightPercent: 20%;
 		
 		
 		/** uncomment below to see as pills */
@@ -24,25 +13,21 @@
 		background: darken(#e7e7e7, 10%);
 		border-radius: 100px;
 		padding: 2px 12px;
-		border-bottom: none!important;
 		$lightPercent: 15%;
 
 
 		&.front-end {
 			$color: #d573ff;
-			border-bottom: $bottomBorder solid $color;
 			background: lighten($color: $color, $amount: $lightPercent);
 		}
 		
 		&.back-end {
 			$color: #7393ff;
-			border-bottom: $bottomBorder solid $color;
 			background: lighten($color: $color, $amount: $lightPercent);
 		}
 		
 		&.database {
 			$color: #ff7373;
-			border-bottom: $bottomBorder solid $color;
 			background: lighten($color: $color, $amount: $lightPercent);
 		}
 	}

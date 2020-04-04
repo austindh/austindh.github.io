@@ -25,6 +25,13 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 		}
 	}, [expandedHeight]);
 
+	const onClick = () => {
+		// Only trigger expansion callback if there is actually expandContent
+		if (!!props.expandContent) {
+			props.expansionChange(!props.isExpanded);
+		}
+	}
+
 	return (
 		<div className={clsx('card', 'expansion-card', {
 			expanded: props.isExpanded
@@ -33,7 +40,7 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 				<div className="top">
 					<div className={clsx('top-bar', {
 						'has-content': !!props.expandContent
-					})} onClick={() => props.expansionChange(!props.isExpanded)}>
+					})} onClick={onClick}>
 						<div className="card-title">{props.title}</div>
 						<div className={clsx('expander', {
 							expanded: props.isExpanded
