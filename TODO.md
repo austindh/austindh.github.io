@@ -7,6 +7,7 @@
 - [ ] Update resume to include website link (austinhughes.me)  
 - [ ] Make sure click on non-expandable expansion card doesn't trigger click event (and collapse other cards)  
 - [ ] On initial page load, expansion card doesn't give enough space to account for full expansion on project card  
+- [ ] Fix spacing on image counter in PhotoGallery  
 
 ### In Progress
 
