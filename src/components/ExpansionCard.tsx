@@ -19,11 +19,11 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 
 	const expandedRef = useRef<HTMLDivElement | null>(null);
 	const [expandedHeight, setExpandedHeight] = useState(0);
-	useLayoutEffect(() => {
-		if (!expandedHeight && expandedRef.current) {
+	useEffect(() => {
+		if (expandedRef.current) {
 			setExpandedHeight(expandedRef.current.clientHeight + 20);
 		}
-	}, [expandedHeight]);
+	});
 
 	const onClick = () => {
 		// Only trigger expansion callback if there is actually expandContent
@@ -58,12 +58,10 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 					}}>
 						{ props.expandContent }
 					</div>
-					{/* Render second copy hidden briefly to get height for expansion */}
-					{ !expandedHeight && 
-						<div ref={expandedRef} className="details expanded hidden">
-							{ props.expandContent }
-						</div>
-					}
+					{/* Render second copy hidden to get height for expansion */}					
+					<div ref={expandedRef} className="details expanded hidden">
+						{ props.expandContent }
+					</div>		
 				</>
 			}
 			{ props.bottomContent }
