@@ -69,8 +69,9 @@
 	.details {
 		font-size: 0.8em;
 		padding-top: 15px;
-		padding-right: 20px;
-		padding-left: 20px;
+		$sidePadding: 60px;
+		padding-right: $sidePadding;
+		padding-left: $sidePadding;
 		margin-bottom: 20px;
 
 		overflow: hidden;
@@ -79,6 +80,7 @@
 		&.hidden {
 			visibility: hidden;
 			position: fixed;
+			max-width: 900px; // TODO this should be based on max page width variable
 		}
 	}
 

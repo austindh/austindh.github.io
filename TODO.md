@@ -7,7 +7,6 @@
 - [ ] Update resume to include website link (austinhughes.me)  
 - [ ] Add CSS reset  
 - [ ] Clean up Google Fonts to only load the two I am using  
-- [ ] Possibly set maximum height for expansion cards and make expanded content scroll  
 
 ### In Progress
 

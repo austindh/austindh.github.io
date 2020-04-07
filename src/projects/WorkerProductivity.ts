@@ -37,7 +37,8 @@ export const WorkerProductivity: Project = {
 		},
 		{
 			imgName: 'ipc-station',
-			caption: '**Admin** - Add stations with name and pictures. Some stations have special requirements that can be set here.'
+			caption: '**Admin** - Add stations with name and pictures. Some stations have special requirements that can be set here.',
+			isMain: true
 		},
 		{
 			imgName: 'ipc-part',
@@ -57,8 +58,7 @@ export const WorkerProductivity: Project = {
 		},
 		{
 			imgName: 'ipc-timer3',
-			caption: '**Timer** - When a worker is finished, they will press stop, then enter how many parts they completed. The submit button will submit the data to the server and remove the timer from the screen.',
-			isMain: true
+			caption: '**Timer** - When a worker is finished, they will press stop, then enter how many parts they completed. The submit button will submit the data to the server and remove the timer from the screen.'			
 		},
 		{
 			imgName: 'ipc-sheets',

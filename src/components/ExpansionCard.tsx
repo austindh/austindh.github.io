@@ -19,6 +19,7 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 
 	const expandedRef = useRef<HTMLDivElement | null>(null);
 	const [expandedHeight, setExpandedHeight] = useState(0);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		if (expandedRef.current) {
 			setExpandedHeight(expandedRef.current.clientHeight + 20);

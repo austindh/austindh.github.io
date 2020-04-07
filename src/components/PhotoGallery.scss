@@ -126,11 +126,14 @@
 
 	.img-container {
 		flex-grow: 1;
-		background: #c7c7c7;
+		background: #c7c7c799;
 		padding: 10px;
-		margin-top: 20px;
 		display: flex;
+		box-shadow: 1px 1px 7px 2px #00000036;
 		align-items: center;
+		margin: 0 10px;
+		margin-bottom: 8px;
+		margin-top: 40px;
 	}
 
 	.img {
