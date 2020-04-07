@@ -13,7 +13,7 @@ Below is a brief overview of all the features:
 ## Cloud server (Amazon EC2 instance)
 
 ### Tech Stack:
-Typescript, React, Express, Postgres, MongoDB, Nginx
+Typescript, React, RxJS, Express, Postgres, MongoDB, Nginx
 
 
 ### Features/Integrations:
@@ -53,20 +53,32 @@ API on cloud server (weather data)
 ## Home server (Intel NUC)
 
 ### Tech Stack:
-Typescript, React, Express, SQLite
+Typescript, Python, React, RxJS, Express, SQLite
 
 ### Features/Integrations:
-**Philips Hue** - (schedules, default colors/brightness, cancellable sequences, custom groups, motion sensor, dimmer switch, rate limiting, exponential backoff)
+**Philips Hue** - Schedule for all lights default brightness and color (more blue-white in the morning
+and more orange at night). Custom interface for creating individual commands as well as sequences (chained
+commands with built in delays that can be cancelled). Custom light groupings. Default brightness/color
+overrides that can be set on a group or individual basis and affect all commands using affected lights.
+Integration with Hue dimmer switch and motion sensor. Rate limiting commands sent to bridge and retry with
+exponential backoff.
 
-**Amazon Dash buttons** -
+**Amazon Dash buttons** - Detect button presses via network activity (python script using \`scapy\`) to trigger
+events.
 
-**GroupMe** -
+**GroupMe** - Some logging and error messages sent to our GroupMe chat.
 
-**Light control website** -
+**Light control website** - Built with React and Typescript, provides a mobile friendly web app to control the lights
+and trigger various functions.
 
-**Home status/presence detection** - (phones (wifi/owntracks) and anonymous sources(Wemo, motion sensors/dimmer switches))
+**Home status/presence detection** - RxJS BehaviorSubject with timer constantly counting down. Several "at home" 
+event sources that reset timer to max amount (15 minutes). When timer reaches zero, marks status as "not home", turns
+off all lights, and sends a message. Next "at home" event received will set status to "at home" and turn the lights 
+back on. "At home" event sources include Owntracks, wifi network activity (python \`scapy\` script and \`node-arp\`
+library), Wemo switch presses, and Hue motion sensor/dimmer switch activity.
 
-**Wemo** - 
+**Wemo** - Automated on/off and scheduling. Integration with hue light commands to treat Wemo switch as a Hue light
+and integrate with all Hue commands/sequences.
 `.trim();
 
 export const Automation: Project = { 
