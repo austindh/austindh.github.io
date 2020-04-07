@@ -43,17 +43,12 @@
 		z-index: 1;
 	}
 
-	.card {
-		// margin: 10px;
-	}
-
 	.current-photo {
 		$sideMargin: 75px;
 		$topBottomMargin: 30px;
 		background: white;
 		position: absolute;
 		display: flex;
-		// flex-direction: column;
 		z-index: 1;
 		width: calc(100% - #{$sideMargin} * 2);
 		height: calc(100% - #{$topBottomMargin} * 2);
@@ -80,12 +75,15 @@
 		flex-grow: 1;
 	}
 
+	$navWidth: 75px;
+
 	.count {
 		color: gray;
 		position: absolute;
 		top: 0;
-		right: 0;
-		padding: 10px;
+		padding: 10px 0;
+		width: $navWidth;
+		text-align: center;
 	}
 
 	.img-container {
@@ -127,10 +125,9 @@
 		
 		svg {
 			visibility: hidden;
-			$size: 75px;
 			padding: 0;
-			height: $size;
-			width: $size;
+			height: $navWidth;
+			width: $navWidth;
 			fill: currentColor;
 		}
 		

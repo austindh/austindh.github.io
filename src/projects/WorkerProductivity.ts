@@ -40,7 +40,7 @@ export const WorkerProductivity: Project = {
 		},
 		{
 			imgName: 'ipc-sheets',
-			caption: 'An endpoint allows for importing the data into Google Sheets using the IMPORTDATA function. The data can then analyzed to find trends on worker productivity and data for individual parts to help in future estimating.'
+			caption: 'An endpoint allows for importing the data into Google Sheets using the `IMPORTDATA` function. The data can then analyzed to find trends on worker productivity and data for individual parts to help in future estimating.'
 		}
 	]
 };

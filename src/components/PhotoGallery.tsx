@@ -88,9 +88,6 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 				'full-height': fullBackdropHeight
 			})} onClick={closeGallery}>
 				<div className="shadow current-photo" onClick={keepOpen}>
-					<div className="count">
-						{selectedPhotoIndex + 1} of {props.pics.length}
-					</div>
 					<div className={clsx('nav', {
 						'show-nav': hasMultiple
 					})} onClick={prevPhoto}>
@@ -107,6 +104,9 @@ export const PhotoGallery = (props: PhotoGalleryProps) => {
 					<div className={clsx('nav', {
 						'show-nav': hasMultiple
 					})} onClick={nextPhoto}>
+						<div className="count">
+							{selectedPhotoIndex + 1} of {props.pics.length}
+						</div>
 						<Next />
 					</div>
 				</div>

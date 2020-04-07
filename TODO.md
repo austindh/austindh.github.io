@@ -5,9 +5,7 @@
 
 - [ ] Create SCSS variables file  
 - [ ] Update resume to include website link (austinhughes.me)  
-- [ ] Make sure click on non-expandable expansion card doesn't trigger click event (and collapse other cards)  
 - [ ] On initial page load, expansion card doesn't give enough space to account for full expansion on project card  
-- [ ] Fix spacing on image counter in PhotoGallery  
 - [ ] Add CSS reset  
 - [ ] Clean up Google Fonts to only load the two I am using  
 
@@ -16,6 +14,8 @@
 
 ### Done ✓
 
+- [x] Make sure click on non-expandable expansion card doesn't trigger click event (and collapse other cards)  
+- [x] Fix spacing on image counter in PhotoGallery  
 - [x] Allow photo captions to be written in Markdown  
 - [x] Add keyboard navigation to PhotoGallery (arrow keys and escape)  
 - [x] Update styling on PhotoGallery to make large photos and captions look better at all screen widths  
