@@ -12,7 +12,7 @@ placed next to each other so the customer could visualize how it would look.
 This whole process was tedious, took a lot of space, and it wasn't easy to send out multiple options.
 
 ## The Solution
-I build a simple web application to run on our home server to make tracking her fabric easier.
+I built a simple web application to run on our home server to make tracking her fabric easier.
 `.trim();
 
 export const FabricInventory: Project = { 

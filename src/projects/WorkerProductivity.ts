@@ -1,8 +1,30 @@
 import { Project } from '.';
 
+const description = `
+## The Problem
+A metal casting facility had data for much of their process using automate machinery,
+but didn't have good insight as to how effective different workers were and how long
+various parts took at each stage of production.
+
+## The Solution
+iPads placed around the warehouse, displaying a simple React app. Workers "sign in" by
+selecting themself from a dropdown, then selecting a part, a station, and then pressing
+"Start". A timer runs while they are working. When completed with their batch of parts,
+they press stop, enter how many units they completed, then click submit. Each iPad supports
+multiple concurrent timers (for different workers or for the same worker working on
+multiple parts simultaneously).
+
+An admin portion of the website allows entering in employees, parts, and stations, along
+with pictures of each.
+
+The server aggregates all of the data in a SQLite database.
+
+`.trim();
+
 export const WorkerProductivity: Project = { 
 	name: 'Worker Productivity Tracker',
 	summary: 'A web application to track worker productivity at a custom metal casting facility.',
+	description,
 	tech: ['React', 'TypeScript', 'Material-UI', 'Node.js', 'Express', 'SQLite'],
 	pics: [
 		{

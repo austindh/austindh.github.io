@@ -1,16 +1,54 @@
 .photo-gallery {
+	// margin: 0 20px;
+
 	.thumb {
+		$transitionTime: 0.3s;
+		cursor: pointer;
+		position: relative;
 		display: inline-flex;
-		// background: #656565;
-		border: solid 1px gray;
+		transition: all $transitionTime;
+		// background: #c7c7c7;
+		// border: solid 1px gray;
 		padding: 5px;
 		margin: 5px;
-
-		img {
-			$size: 200px;
+		box-shadow: 1px 1px 7px 2px #00000036;
+		// border: solid 1px #00000042;
+		
+		.img {
+			
+			$size: 100px;
 			width: $size;
 			height: $size;
-			object-fit: contain;
+	
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		.icon {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #ffffffa8;
+			padding: 4px;
+		}
+
+		svg {
+			color: #4c4c4c;
+			fill: currentColor;
+			transition: all $transitionTime;
+		}
+
+		&:hover {
+			box-shadow: 1px 1px 7px 2px #0000006b;
+
+			svg {	
+				color: black;
+				// color: #ff8400;
+			} 
 		}
 	}
 }

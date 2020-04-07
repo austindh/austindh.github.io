@@ -19,6 +19,14 @@ export const Projects = () => {
 		})
 	}
 
+	const getDescription = (p: Project): React.ReactNode => {
+		return p.description && (
+			<div className="description">
+				<ReactMarkdown source={ p.description } />
+			</div>
+		);
+	}
+
 	return (
 		<div id="projects">
 			{myProjects.map((p, i) => (
@@ -34,7 +42,7 @@ export const Projects = () => {
 						{ p.pics && <PhotoGallery  pics={p.pics}/> }
 						</>
 					}
-					expandContent={ p.description && <ReactMarkdown source={ p.description } /> }
+					expandContent={ getDescription(p) }
 					bottomContent={
 						<div className="tech">
 							<TechList tech={p.tech} />
