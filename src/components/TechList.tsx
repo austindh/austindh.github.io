@@ -4,7 +4,8 @@ import './TechList.scss';
 import clsx from 'clsx';
 
 interface TechListProps {
-	tech: string[]
+	tech?: string[]
+	groupedTech?: (string | string[])[]
 }
 
 type TechType = 'front-end' | 'back-end' | 'database' | 'general'
@@ -24,7 +25,7 @@ export const TechList = (props: TechListProps) => {
 		return tech.some(t => name.toLowerCase().includes(t));
 	}
 
-	const techList: Tech[] = props.tech.map(name => {
+	const toTechType = (name: string): Tech => {
 		let type: TechType = 'general';
 		if (matches(name, frontEndTech)) {
 			type = 'front-end';
@@ -35,17 +36,48 @@ export const TechList = (props: TechListProps) => {
 		}
 
 		return { name, type };
-	});
+	}
+
+	let techList: Tech[] = [];
+	if (props.tech) {
+		techList = props.tech.map(toTechType);
+	}
 
 	techList.sort((a, b) => {
 		return sortOrder.indexOf(a.type) - sortOrder.indexOf(b.type);
 	});
 
-	return (
-		<div className="tech-list">
+	const getTechListEl = (techList: Tech[], key=0) => (
+		<div className="tech-list" key={key}>
 			{techList.map((t, i) => (
 				<div className={clsx('tech', t.type)} key={i}>{t.name}</div>
 			))}
 		</div>
-	)
+	);
+	
+	let techLists;
+	if (props.groupedTech) {
+		const groups: string[][] = props.groupedTech.map(x => {
+			if (typeof x === 'string') {
+				return [x]
+			}
+			return x;
+		});
+		const techGroups: Tech[][] = groups.map(g => g.map(toTechType));
+		techLists = techGroups.map((list, i) => getTechListEl(list, i))
+	}
+
+	if (props.tech) {
+		return getTechListEl(techList);
+	}
+
+	if (techLists) {
+		return (
+			<div className="tech-lists">
+				{techLists}
+			</div>
+		)
+	}
+
+	return <></>;
 };

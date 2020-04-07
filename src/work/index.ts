@@ -94,7 +94,7 @@ export const myJobs: Job[] = [
 			'Worked as part of a team of developers on an Angular application',
 			'Worked as part of a team of developers on a React application'
 		],
-		tech: ['C# (.NET)', 'Oracle SQL', 'AngularJS', 'Bootstrap', 'TypeScript', 'Angular', 'React', 'Babel']
+		tech: ['C# (.NET)', 'Oracle SQL', 'AngularJS', 'TypeScript', 'Angular', 'React', 'Babel']
 	}
 ];
 

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import cosha from 'cosha';
 
 import './AboutMe.scss';
-import { Link } from 'react-router-dom';
+import { TechList } from './TechList';
 
 export const AboutMe = () => {
 
@@ -16,6 +16,27 @@ export const AboutMe = () => {
 			y: 0
 		})
 	}, []);
+
+	const skills = [
+		['React',
+		'TypeScript',
+		'Angular',
+		'AngularJS'],
+		['Redux',
+		'RxJS'],
+		['webpack',
+		'npm'],
+		['Jasmine',
+		'Mocha',
+		'Chai',
+		'SinonJS'],
+		['Node.js',
+		'Express'],
+		'SQL',
+		'C# (.NET)',
+		'Python',
+		'Java'
+	]
 
 	return (
     <div id="about-me">
@@ -42,11 +63,16 @@ export const AboutMe = () => {
 		  </a>
         </div>
       </div>
-      <div className="card paragraph">
-        I am a full stack web developer seeking a full-time remote position. I
-        am passionate about web development, learning new technologies, and home
-        automation.
-      </div>
+	  <div className="paragraph">
+		<div className="about card card-1">
+			I am a full stack web developer seeking a full-time remote position. I
+			am passionate about web development, learning new technologies, and home
+			automation.
+		</div>
+		<div className="card card-2">
+			<TechList groupedTech={skills}/>
+		</div>
+	  </div>
     </div>
   );
 };

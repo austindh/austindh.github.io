@@ -30,6 +30,7 @@
 		margin-right: 30px;
 		padding: 15px 25px;
 		padding-top: 30px;
+		height: fit-content;
 		
 		.info {
 			margin-top: 16px;
@@ -56,11 +57,15 @@
 		}
 		
 	}
-
-	.paragraph {
-		flex-grow: 1;
-		height: 100%;
+	
+	.about {
 		font-size: 0.9em;
+		// flex-grow: 1;
+		// height: 100%;
+	}
+
+	.tech-list {
+		margin-bottom: 10px;
 	}
 }
 
@@ -81,4 +86,13 @@
 .first .paragraph {
 	margin-top: 70px;
 	animation-delay: 0.2s;
+}
+
+.first {
+	@for $i from 1 through 20 {
+		.card-#{$i} {
+			animation-delay: 0.2s + (0.1s * $i);
+		}
+
+	}
 }
