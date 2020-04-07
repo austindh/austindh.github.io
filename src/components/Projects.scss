@@ -3,9 +3,23 @@
 		margin-top: 10px;
 	}
 	
+	.photo-thumb {
+		margin-right: 10px;
+	}
+
 	.summary {
 		margin-bottom: 10px;
 		font-size: 0.9em;
+		display: flex;
+		// align-items: center;
+		margin-right: 50px;
+		// margin-top: 15px;
+	}
+
+
+	.pics .summary-text {
+		// border: solid 1px gray;
+		margin-top: 10px;
 	}
 
 	.description {

@@ -37,10 +37,12 @@ export const Projects = () => {
 					expansionChange={() => toggleProject(p)}
 					title={p.name}
 					topContent={
-						<>
-						<div className="summary">{p.summary}</div>
-						{ p.pics && <PhotoGallery  pics={p.pics}/> }
-						</>
+						<div className={clsx("summary", {
+							pics: !!p.pics
+						})}>
+							{ p.pics && <div className="photo-thumb"><PhotoGallery  pics={p.pics}/></div> }
+							<div className="summary-text">{p.summary}</div>
+						</div>
 					}
 					expandContent={ getDescription(p) }
 					bottomContent={
