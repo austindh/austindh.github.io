@@ -31,7 +31,7 @@ const processImage = async (img: Image) => {
 	const { fileName, name } = img;
 	const sourceFile = path.join(rawImageFolder, fileName);
 	const destFile = path.join(publicImgFolder, `${name}.png`);
-	const destFileThumb = path.join(publicImgFolder, `${name}.thumb.jpg`);
+	const destFileThumb = path.join(publicImgFolder, `${name}.thumb.png`);
 
 	await sharp(sourceFile)
 		.resize(FULL_SIZE, FULL_SIZE, { fit: 'inside' })

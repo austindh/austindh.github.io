@@ -13,7 +13,6 @@ export const NavBar = () => {
 		{ name: 'Home', route: '/' },
 		{ name: "Work Experience", route: "/work" },
 		{ name: "Projects", route: "/projects" },
-		{ name: 'Skills', route: '/skills' },
 	];
 
 	const { pathname } = useLocation();

@@ -1,6 +1,7 @@
 //GENERATED FILE - DO NOT MODIFY DIRECTLY
 export type ImageName =
 	'automation' |
+	'byu' |
 	'fi-edit' |
 	'fi-filter' |
 	'fi-old' |

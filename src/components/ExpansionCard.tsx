@@ -6,9 +6,9 @@ import './ExpansionCard.scss';
 
 interface ExpansionCardProps {
 	classes?: string[]
-	isExpanded: boolean
-	expansionChange: (isExpanded: boolean) => void
-	title: string
+	isExpanded?: boolean
+	expansionChange?: (isExpanded: boolean) => void
+	title?: string
 	topContent?: any
 	expandContent?: any
 	bottomContent?: any
@@ -28,7 +28,7 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 
 	const onClick = () => {
 		// Only trigger expansion callback if there is actually expandContent
-		if (!!props.expandContent) {
+		if (!!props.expandContent && props.expansionChange) {
 			props.expansionChange(!props.isExpanded);
 		}
 	}

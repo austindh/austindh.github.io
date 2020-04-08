@@ -6,6 +6,10 @@ import clsx from 'clsx';
 interface TechListProps {
 	tech?: string[]
 	groupedTech?: (string | string[])[]
+	noSort?: boolean
+	techTypeOverrides?: {
+		[t in TechType]?: string[]
+	}
 }
 
 type TechType = 'front-end' | 'back-end' | 'database' | 'general'
@@ -17,7 +21,8 @@ interface Tech {
 export const TechList = (props: TechListProps) => {
 	// Sort by tech type (front-end, back-end, etc.) and color code
 	const sortOrder: TechType[] = ['general', 'front-end', 'back-end', 'database'];
-	const frontEndTech = ['angular', 'react', 'bootstrap', 'jquery', 'handlebars', 'backbone', 'material', 'rxjs'];
+	const frontEndTech = ['angular', 'react', 'bootstrap', 'jquery', 'handlebars', 
+		'backbone', 'material', 'rxjs', 'redux'];
 	const backEndTech = ['c#', 'node', 'express', 'php', 'jersey', 'aws', 'nginx'];
 	const dbTech = ['mongo', 'oracle', 'sql', 'postgres']
 
@@ -25,8 +30,22 @@ export const TechList = (props: TechListProps) => {
 		return tech.some(t => name.toLowerCase().includes(t));
 	}
 
+	if (props.techTypeOverrides) {
+		const {techTypeOverrides: overrides} = props;
+		if (overrides["front-end"]) {
+			overrides["front-end"].forEach(x => frontEndTech.push(x));
+		}
+		if (overrides["back-end"]) {
+			overrides["back-end"].forEach(x => backEndTech.push(x));
+		}
+		if (overrides.database) {
+			overrides.database.forEach(x => dbTech.push(x));
+		}
+	}
+
 	const toTechType = (name: string): Tech => {
 		let type: TechType = 'general';
+
 		if (matches(name, frontEndTech)) {
 			type = 'front-end';
 		} else if (matches(name, backEndTech)) {
@@ -43,9 +62,11 @@ export const TechList = (props: TechListProps) => {
 		techList = props.tech.map(toTechType);
 	}
 
-	techList.sort((a, b) => {
-		return sortOrder.indexOf(a.type) - sortOrder.indexOf(b.type);
-	});
+	if (!props.noSort) {
+		techList.sort((a, b) => {
+			return sortOrder.indexOf(a.type) - sortOrder.indexOf(b.type);
+		});
+	}
 
 	const getTechListEl = (techList: Tech[], key=0) => (
 		<div className="tech-list" key={key}>

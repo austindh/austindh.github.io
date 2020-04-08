@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
 	BrowserRouter as Router,
-	Switch,
-	Route,
 	useLocation
 } from 'react-router-dom';
 
@@ -12,7 +10,6 @@ import { NavBar } from './components/NavBar';
 import { Jobs } from './components/Jobs';
 import { Projects } from './components/Projects';
 import { Page } from './components/Page';
-import { Skills } from './components/Skills';
 import { AboutMe } from './components/AboutMe';
 import clsx from "clsx";
 
@@ -47,9 +44,6 @@ function Main() {
 				break;
 			case '/projects':
 				newComponent = <Projects />;
-				break;
-			case '/skills':
-				newComponent = <Skills />;
 				break;
 			case '/':
 				newComponent = <AboutMe />;

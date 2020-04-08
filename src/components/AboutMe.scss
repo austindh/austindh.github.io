@@ -1,12 +1,28 @@
 #about-me {
 	display: flex;
 
+	.card-title {
+		font-size: 1.2em;
+	}
+
 	.pic {
 		z-index: 1;
 	}
 
 	.pic-clone {
 		z-index: 0;
+	}
+
+	.tech-card {
+		.tech {
+			// background: #cecece;
+			// margin-bottom: 10px;
+			// margin-bottom: 0;
+		}
+	}
+
+	.intro .text {
+		margin-bottom: 10px;
 	}
 
 	img.profile {
@@ -16,6 +32,28 @@
 		object-fit: cover;
 		object-position: 0 -8px;
 		border-radius: 300px;
+	}
+
+	.education {
+		display: flex;
+		align-items: center;
+		margin: 10px 0;
+
+		.text {
+			margin-left: 20px;
+		}
+	}
+
+	.text {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.byu {
+		$size: 100px;
+		height: $size;
+		width: $size;
 	}
 
 	.pic-wrapper {
@@ -65,7 +103,7 @@
 	}
 
 	.tech-list {
-		margin-bottom: 10px;
+		margin: 10px 0;
 	}
 }
 
@@ -85,13 +123,13 @@
 
 .first .paragraph {
 	margin-top: 70px;
-	animation-delay: 0.2s;
+	animation-delay: 0.15s;
 }
 
 .first {
 	@for $i from 1 through 20 {
 		.card-#{$i} {
-			animation-delay: 0.2s + (0.1s * $i);
+			animation-delay: 0.15s + (0.1s * $i);
 		}
 
 	}
