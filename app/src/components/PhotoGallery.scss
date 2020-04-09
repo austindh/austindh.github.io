@@ -1,0 +1,184 @@
+.photo-gallery {
+	// margin: 0 20px;
+
+	.thumb {
+		$transitionTime: 0.3s;
+		background: white;
+		cursor: pointer;
+		position: relative;
+		display: inline-flex;
+		transition: all $transitionTime;
+		// background: #c7c7c7;
+		// border: solid 1px gray;
+		padding: 5px;
+		margin: 5px;
+		box-shadow: 1px 1px 7px 2px #00000036;
+		// border: solid 1px #00000042;
+		
+		.img {
+			
+			$size: 100px;
+			width: $size;
+			height: $size;
+	
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		.icon {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #ffffffa8;
+			padding: 4px;
+		}
+
+		svg {
+			color: #4c4c4c;
+			fill: currentColor;
+			transition: all $transitionTime;
+		}
+
+		&:hover {
+			box-shadow: 1px 1px 7px 2px #0000006b;
+
+			svg {	
+				color: black;
+				// color: #ff8400;
+			} 
+		}
+	}
+}
+
+.photo-viewer-backdrop {
+	position: fixed;
+	top: 0;
+	height: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: opacity 0.3s;
+	background: #00000078;
+	z-index: -1;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+	&.visible {
+		height: auto;
+		opacity: 1;
+		bottom: 0;
+		z-index: 1;
+	}
+	
+	&.full-height {
+		height: auto;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	.current-photo {
+		$sideMargin: 75px;
+		$topBottomMargin: 30px;
+		background: white;
+		position: absolute;
+		display: flex;
+		z-index: 1;
+		width: calc(100% - #{$sideMargin} * 2);
+		height: calc(100% - #{$topBottomMargin} * 2);
+		margin: auto;
+		top: $topBottomMargin;
+	}
+
+	.mid {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.caption {
+		background: white;
+		font-size: 0.9em;
+		padding: 20px 0;
+	}
+
+	.mid {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		flex-grow: 1;
+	}
+
+	$navWidth: 75px;
+
+	.count {
+		color: gray;
+		position: absolute;
+		top: 0;
+		padding: 10px 0;
+		width: $navWidth;
+		text-align: center;
+	}
+
+	.img-container {
+		flex-grow: 1;
+		background: #c7c7c799;
+		padding: 10px;
+		display: flex;
+		box-shadow: 1px 1px 7px 2px #00000036;
+		align-items: center;
+		margin: 0 10px;
+		margin-bottom: 8px;
+		margin-top: 40px;
+	}
+
+	.img {
+		// margin: 20px;
+		box-sizing: border-box;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		// flex-grow: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	img {
+		// max-width: 100%;
+		// max-height: 100%;
+		// border: solid 1px gray;
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+		color: #c7c7c7;
+		// color: lighten(#ff8400, 30%);
+		
+		&:hover {
+			color: gray;
+			color: #ff8400;
+		}
+		
+		svg {
+			visibility: hidden;
+			padding: 0;
+			height: $navWidth;
+			width: $navWidth;
+			fill: currentColor;
+		}
+		
+		&.show-nav {
+			cursor: pointer;
+			svg {
+				visibility: visible;
+			}
+		}
+
+	}
+}

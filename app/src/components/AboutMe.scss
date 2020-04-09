@@ -1,0 +1,136 @@
+#about-me {
+	display: flex;
+
+	.card-title {
+		font-size: 1.2em;
+	}
+
+	.pic {
+		z-index: 1;
+	}
+
+	.pic-clone {
+		z-index: 0;
+	}
+
+	.tech-card {
+		.tech {
+			// background: #cecece;
+			// margin-bottom: 10px;
+			// margin-bottom: 0;
+		}
+	}
+
+	.intro .text {
+		margin-bottom: 10px;
+	}
+
+	img.profile {
+		$size: 200px;
+		height: $size;
+		width: $size;
+		object-fit: cover;
+		object-position: 0 -8px;
+		border-radius: 300px;
+	}
+
+	.education {
+		display: flex;
+		align-items: center;
+		margin: 10px 0;
+
+		.text {
+			margin-left: 20px;
+		}
+	}
+
+	.text {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.byu {
+		$size: 100px;
+		height: $size;
+		width: $size;
+	}
+
+	.pic-wrapper {
+		margin-bottom: 10px;
+	}
+
+	.contact {
+		font-size: 0.8em;
+		color: #575757;
+		align-items: center;
+		// display: flex;
+		margin-right: 30px;
+		padding: 15px 25px;
+		padding-top: 30px;
+		height: fit-content;
+		
+		.info {
+			margin-top: 16px;
+
+			a {
+				color: #757575;
+				text-decoration: none;
+				display: flex;
+				// justify-content: center;
+				align-items: center;
+				margin-bottom: 8px;
+
+				&:hover {
+					color: black;
+				}
+			}
+		}
+		
+		.icon {
+			$size: 24px;
+			height: $size;
+			width: $size;
+			margin-right: 10px;
+		}
+		
+	}
+	
+	.about {
+		font-size: 0.9em;
+		// flex-grow: 1;
+		// height: 100%;
+	}
+
+	.tech-list {
+		margin: 10px 0;
+	}
+}
+
+.first, .next {
+	.paragraph {
+		animation-name: margin-top;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+
+	@keyframes margin-top {
+		from { margin-top: 70px; }
+		to { margin-top: 0; }
+	}
+}
+
+.first .paragraph {
+	margin-top: 70px;
+	animation-delay: 0.15s;
+}
+
+.first {
+	@for $i from 1 through 20 {
+		.card-#{$i} {
+			animation-delay: 0.15s + (0.1s * $i);
+		}
+
+	}
+}

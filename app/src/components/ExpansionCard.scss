@@ -1,0 +1,93 @@
+.expansion-card {
+	display: flex;
+	flex-direction: column;
+	transition: all 0.5s;
+
+	.contents {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.top {
+		display: flex;
+		flex-direction: column;
+	}
+
+
+	.top-bar {
+		display: flex;
+		justify-content: space-between;
+		$expandColor: #ff8400;
+		$expandColor: black;
+		
+		&:hover .expander svg {
+			color: $expandColor;
+		}
+		
+		.expander {
+			display: flex;
+			justify-content: flex-end;
+			
+			svg {
+				display: none;
+				color: #9c9c9c;
+				fill: currentColor;
+				$size: 40px;
+				margin-top: -0.25 * $size;
+				transition: all 0.3s;
+				width: $size;
+				height: $size;
+			}
+			
+			
+			&.expanded svg {
+				color: $expandColor;
+				transform: rotate(180deg);
+			}
+		}
+
+		&.has-content {
+			cursor: pointer;
+
+			svg {
+				display: unset;
+			}
+		}
+		
+	}
+	
+	.title {
+		font-size: 0.9em;
+		margin-right: 50px;
+
+		div {
+			display: flex;
+		}
+	}
+
+
+	.details {
+		font-size: 0.8em;
+		padding: 0;
+		padding-top: 15px;
+		$sidePadding: 60px;
+		padding-right: $sidePadding;
+		padding-left: $sidePadding;
+		margin: 0;		
+		overflow: hidden;
+		transition: all 0.4s ease-in-out;
+		
+		&.expanded {
+			margin-bottom: 20px;
+		}
+
+		&.hidden {
+			visibility: hidden;
+			position: fixed;
+			max-width: 900px; // TODO this should be based on max page width variable
+		}
+	}
+
+	
+
+}

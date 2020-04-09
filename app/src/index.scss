@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+		font-family: 'Nunito', sans-serif;
+		// font-family: 'Sen', sans-serif;
+		// font-family: 'Muli', sans-serif;
+  // font-family: 'Barlow', sans-serif;
+  // font-family: 'Slabo 27px', serif;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    // sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.2em;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  height: 100vh;
+  // height: 100%;
+  // min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+  background: #eeeeee;
+  background: linear-gradient(to top left, #0a4686, #0a8683);
+}

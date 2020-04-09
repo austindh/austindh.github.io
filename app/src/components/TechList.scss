@@ -1,0 +1,35 @@
+.tech-list {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.8em;
+
+	.tech {
+		$margin: 10px;
+		margin-right: $margin;
+		
+		
+		/** uncomment below to see as pills */
+
+		background: darken(#e7e7e7, 10%);
+		border-radius: 100px;
+		padding: 2px 12px;
+		$lightPercent: 15%;
+
+
+		&.front-end {
+			$color: #d573ff;
+			background: lighten($color: $color, $amount: $lightPercent);
+		}
+		
+		&.back-end {
+			$color: #7393ff;
+			background: lighten($color: $color, $amount: $lightPercent);
+		}
+		
+		&.database {
+			$color: #ff7373;
+			background: lighten($color: $color, $amount: $lightPercent);
+		}
+	}
+
+}
