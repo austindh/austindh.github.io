@@ -28,18 +28,17 @@ export const NavBar = () => {
 		left: 0
 	});
 
-	// move highlighter to center under correct element
-	useEffect(() => {
+	const moveHighlighter = () => {
 		const highlighter = document.getElementById("highlighter");
 		const pageLink = document.getElementById(selectedPage);
 		if (!pageLink || !highlighter) {
 			return;
 		}
-
+	
 		const pageLeft = pageLink.offsetLeft;
 		const pageWidth = pageLink.clientWidth;
 		const newHighlighterWidth = pageWidth - 25;
-
+	
 		setHighlighterStyle(h => {
 			return {
 				...h,
@@ -47,7 +46,11 @@ export const NavBar = () => {
 				width: newHighlighterWidth
 			}
 		});
+	}
 
+	// move highlighter to center under correct element
+	useEffect(() => {
+		moveHighlighter();
 	}, [selectedPage]);
 
 	// wait to show highlighter until initial positioning is done
@@ -60,7 +63,18 @@ export const NavBar = () => {
 				}
 			})
 		}, 500)
-	}, [])
+	}, []);
+
+	// Move and resize highlighter on window resize
+	useEffect(() => {
+		let timeout: NodeJS.Timeout;
+		const update = () => {
+			clearTimeout(timeout);
+			timeout = setTimeout(moveHighlighter, 500);
+		};
+		window.addEventListener('resize', update);
+		return () => document.removeEventListener('resize', update);
+	}, [selectedPage]);
 
 	return (
 		<div id="top-nav" className="shadow">

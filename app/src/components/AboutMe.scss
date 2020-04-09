@@ -1,5 +1,11 @@
+@import '../mixins';
+
 #about-me {
 	display: flex;
+
+	@include narrow {
+		flex-direction: column;
+	}
 
 	.card-title {
 		font-size: 1.2em;
@@ -32,6 +38,19 @@
 		object-fit: cover;
 		object-position: 0 -8px;
 		border-radius: 300px;
+
+		@include narrow {
+			$size: 150px;
+			height: $size;
+			width: $size;
+		}
+
+		@include small {
+			$size: 100px;
+			height: $size;
+			width: $size;
+		}
+
 	}
 
 	.education {
@@ -69,9 +88,24 @@
 		padding: 15px 25px;
 		padding-top: 30px;
 		height: fit-content;
+
+		@include narrow {
+			margin-right: 0;
+			width: fit-content;
+			display: flex;
+		}
+
+		@include small {
+			font-size: 0.6em;
+		}
 		
 		.info {
 			margin-top: 16px;
+
+			@include narrow {
+				margin-top: 0;
+				margin-left: 20px;
+			}
 
 			a {
 				color: #757575;

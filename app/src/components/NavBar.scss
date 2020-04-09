@@ -1,3 +1,5 @@
+@import '../mixins.scss';
+
 #top-nav {
 	background: lightgray;
 	display: flex;
@@ -10,9 +12,15 @@
 	background: white;
 	color: #757575;
 
+	@include narrow {
+		font-size: 0.8em;
+	}
+
+	@include small {
+		font-size: 0.7em;
+	}
+
 	.pages {
-		// border: solid 1px gray;
-		// margin-left: 20px;
 		display: flex;
 		align-items: center;
 		position: relative;
@@ -20,14 +28,15 @@
 		margin-bottom: 10px;
 
 		> div {
-			// border: solid 1px blue;
 			padding: 0 30px;
-			// margin: 0 10px;
+			@include narrow {
+				padding: 0 10px;
+			}
+
 			transition: all 0.5s;
 
 			&:hover {
 				color: black;
-				// font-weight: bold;
 			}
 
 			a {
@@ -58,20 +67,22 @@
 	.title {
 		font-size: 32px;
 		margin-right: 50px;
-		// font-weight: bold;
 		font-family: 'Titillium Web', sans-serif;
 		font-family: 'Nunito', sans-serif;
 		font-family: 'Sen', sans-serif;
 		font-family: 'Muli', sans-serif;
 		font-family: 'Barlow', sans-serif;
-		// text-shadow: 2px 2px 8px #00000038;
 		margin-top: -5px;
-		// background: linear-gradient(to bottom right, #ff8400, #4d0606);
-		// background: linear-gradient(to bottom right, #ff8400, #820909);
-		// background: linear-gradient(to top left, #ff8400, #820909);
-		// background: linear-gradient(to top left, #0a4686, #0a8683);
-		// color: white;
 		padding: 15px;
 		color: black;
+
+		@include narrow {
+			font-size: 20px;
+			margin-right: 15px;
+		}
+
+		@include small {
+			font-size: 16px;
+		}
 	}
 }

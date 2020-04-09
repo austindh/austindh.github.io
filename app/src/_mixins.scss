@@ -1,0 +1,14 @@
+$narrow: 800px;
+$small: 500px;
+
+@mixin narrow {
+	@media (max-width: #{$narrow}) {
+		@content
+	}
+}
+
+@mixin small {
+	@media (max-width: #{$small}) {
+		@content
+	}
+}
