@@ -8,6 +8,7 @@ const buildDir = path.resolve(__dirname, 'build');
 
 const keep = new Set([
 	'.git',
+	'CNAME',
 	ourDir
 ]);
 
