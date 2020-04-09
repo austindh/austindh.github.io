@@ -26,7 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run postbuild",
+    "postbuild": "ts-node --project tsconfig.node.json postbuild.ts",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "img": "ts-node --project tsconfig.node.json image-update.ts"
