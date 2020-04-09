@@ -8,9 +8,12 @@ $ npm install
 
 # run dev server
 $ npm start
+
+# create build
+$ npm run build
 ```
 
-### Updating images
+## Updating images
 ```bash
 $ nmp run img
 ```
