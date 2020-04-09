@@ -68,14 +68,18 @@
 
 	.details {
 		font-size: 0.8em;
+		padding: 0;
 		padding-top: 15px;
 		$sidePadding: 60px;
 		padding-right: $sidePadding;
 		padding-left: $sidePadding;
-		margin-bottom: 20px;
-
+		margin: 0;		
 		overflow: hidden;
 		transition: all 0.4s ease-in-out;
+		
+		&.expanded {
+			margin-bottom: 20px;
+		}
 
 		&.hidden {
 			visibility: hidden;
@@ -83,5 +87,7 @@
 			max-width: 900px; // TODO this should be based on max page width variable
 		}
 	}
+
+	
 
 }

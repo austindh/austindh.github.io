@@ -1,9 +1,12 @@
 //GENERATED FILE - DO NOT MODIFY DIRECTLY
 export type ImageName =
+	'automation-home' |
+	'automation-nursery' |
 	'automation' |
 	'byu' |
 	'fi-edit' |
 	'fi-filter' |
+	'fi-new' |
 	'fi-old' |
 	'fi-pic' |
 	'fi' |

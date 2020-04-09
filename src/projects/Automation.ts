@@ -19,16 +19,16 @@ Typescript, React, RxJS, Express, Postgres, MongoDB, Nginx
 ### Features/Integrations:
 **Twilio** - Used for sending and receiving text messages.
 
-**Trello** - Automatically creates cards each month with tasks we need to do. Cards with due
+**Trello** - Automatically create cards each month with tasks we need to do. Cards with due
 dates trigger daily reminder texts until the card has been completed.
 
 **Weather (Dark Sky)** - Gets weather information used by our home server.
 
-**GroupMe** - Used to send updates and receiving text commands.
+**GroupMe** - Used to send updates and receive text commands.
 
 **Budgeting website** - Built with React and Typescript, it's a simple website to track our income each month.
 
-**Choir texting** - Second Twilio number set up to send out individual messages to members of a church
+**Group texting proxy** - Second Twilio number set up to send out individual messages to members of a church
 choir. When I text the Twilio number, then message is sent to each individual member. Members can add or
 remove themselves from the text list by texting certain commands to the main number. Members' texts to the
 number are forwarded to my phone, and I can respond to individually reply. 
@@ -45,8 +45,7 @@ out the trash (and if it's a recycling week) and Trello card due date reminders.
 
 **REST API** - Used for budget website as well as home server.
 
-socket connection
-API on cloud server (weather data)
+**Socket&#46;io server** - Accepts socket connection from our home server. Sends commands back to home server and has logic to queue messages for later if no socket connected.
 
 ---
 
@@ -86,8 +85,18 @@ export const Automation: Project = {
 	summary: 'My home automation project. What started as a simple Node.js server on a Raspberry Pi has expanded to an external facing server hosted on AWS and a local server running on an Intel NUC.',
 	tech: ['React', 'TypeScript', 'Node.js', 'Express', 'RxJS', 'Python', 'AWS', 'Nginx', 'MongoDB', 'Postgres', 'SQLite', 'Socket.IO'],
 	description,
-	pics: [{
-		imgName: 'automation',
-		caption: 'Basic architecture'
-	}]
+	pics: [
+		{
+			imgName: 'automation',
+			caption: 'Basic architecture overview'
+		},
+		{
+			imgName: 'automation-home',
+			caption: 'Home screen for local mobile friendly web app.'
+		},
+		{
+			imgName: 'automation-nursery',
+			caption: 'Buttons to trigger various light functions for each room'
+		}
+	]
 }

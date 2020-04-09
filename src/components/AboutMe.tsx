@@ -75,8 +75,8 @@ export const AboutMe = () => {
 					am passionate about web development, learning new technologies, and home
 					automation.
 				</span>
-				<br/>
-				<span>I think if I filled this some more it might look better.</span>
+				{/* <br/>
+				<span>I think if I filled this some more it might look better.</span> */}
 			</div>
 		}
 	/>;

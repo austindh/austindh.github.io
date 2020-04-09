@@ -2,23 +2,34 @@ import { Project } from '.';
 
 const description = `
 ## The Problem
-A metal casting facility had data for much of their process using automate machinery,
+A metal casting facility had data for much of their process using automated machinery,
 but didn't have good insight as to how effective different workers were and how long
-various parts took at each stage of production.
+various parts took at each stage of production. They needed a way for
+each worker to input the time spent for each part and each station
+in the warehouse, and it needed to be easy to use.
 
 ## The Solution
-iPads placed around the warehouse, displaying a simple React app. Workers "sign in" by
-selecting themself from a dropdown, then selecting a part, a station, and then pressing
-"Start". A timer runs while they are working. When completed with their batch of parts,
-they press stop, enter how many units they completed, then click submit. Each iPad supports
-multiple concurrent timers (for different workers or for the same worker working on
-multiple parts simultaneously).
+I created a web application to help with gathering and analyzing data.
 
-An admin portion of the website allows entering in employees, parts, and stations, along
-with pictures of each.
+**Admin** - An admin portion of the website is used to enter in all of
+the employees, stations, and parts to be used. Pictures can be added
+for each, and data describing the stations and parts is also added.
 
-The server aggregates all of the data in a SQLite database.
+**Timers** - This is the main part of the site. iPads are placed around
+the warehouse near various stations, with a very simple interface to
+log work. Employees "sign in" by selecting their name/picture from a
+dropdown menu. Then they select which station they are at. Then they
+select the part and any special options for the part/station. They
+press a "play" button to start a timer, then they start their work.
+When their batch is finished, they press "stop". They then enter in how
+many units they completed, then press "submit", which sends the data to
+the server and deletes the timer. Multiple timers can be added on each
+iPad, allowing multiple workers to use each one.
 
+**Server** - The server is written in Node.js and Express, and all data
+is stored in a SQLite database. An endpoint is exposed allowing the
+timer data to be imported into a Google Sheet, using the \`IMPORTDATA\`
+function, where it can then be analyzed however the company wants.
 `.trim();
 
 export const WorkerProductivity: Project = { 
