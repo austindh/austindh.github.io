@@ -1,4 +1,5 @@
-@import '../mixins.scss';
+@import '../mixins';
+@import '../variables';
 
 #top-nav {
 	background: lightgray;
@@ -29,11 +30,20 @@
 
 		> div {
 			padding: 0 30px;
+			transition: all 0.5s;
+			text-align: center;
+
 			@include narrow {
 				padding: 0 10px;
 			}
 
-			transition: all 0.5s;
+			@include small {
+				padding: 0 5px;
+			}
+
+			@include atWidth(450px) {
+				font-size: 12px;
+			}
 
 			&:hover {
 				color: black;
@@ -61,16 +71,16 @@
 				width 0.5s ease-in-out,
 				opacity 0.5s;
 			padding: 0;
+
+			@include narrow {
+				bottom: -2px;
+			}
 		}
 	}
 
 	.title {
 		font-size: 32px;
 		margin-right: 50px;
-		font-family: 'Titillium Web', sans-serif;
-		font-family: 'Nunito', sans-serif;
-		font-family: 'Sen', sans-serif;
-		font-family: 'Muli', sans-serif;
 		font-family: 'Barlow', sans-serif;
 		margin-top: -5px;
 		padding: 15px;
@@ -83,6 +93,9 @@
 
 		@include small {
 			font-size: 16px;
+			margin-right: 0;
+			flex-grow: 1;
 		}
+
 	}
 }

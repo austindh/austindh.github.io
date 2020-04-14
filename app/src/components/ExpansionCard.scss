@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .expansion-card {
 	display: flex;
 	flex-direction: column;
@@ -76,9 +78,25 @@
 		margin: 0;		
 		overflow: hidden;
 		transition: all 0.4s ease-in-out;
+
+		@include narrow {
+			$sidePadding: 40px;
+			padding-right: $sidePadding;
+			padding-left: $sidePadding;
+		}
+
+		@include small {
+			$sidePadding: 0px;
+			padding-right: $sidePadding;
+			padding-left: $sidePadding;
+		}
 		
 		&.expanded {
 			margin-bottom: 20px;
+
+			@include small {
+				margin-bottom: 0;
+			}
 		}
 
 		&.hidden {

@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .photo-gallery {
 	// margin: 0 20px;
 
@@ -20,6 +22,12 @@
 			$size: 100px;
 			width: $size;
 			height: $size;
+			
+			@include atWidth(600px) {
+				$size: 75px;
+				width: $size;
+				height: $size;
+			}
 	
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -85,12 +93,21 @@
 	.current-photo {
 		$sideMargin: 75px;
 		$topBottomMargin: 30px;
+		width: calc(100% - #{$sideMargin} * 2);
+		height: calc(100% - #{$topBottomMargin} * 2);
+
+		@include narrow {
+			$sideMargin: 30px;
+			$topBottomMargin: 30px;
+			width: calc(100% - #{$sideMargin} * 2);
+			height: calc(100% - #{$topBottomMargin} * 2);
+		}
+
+
 		background: white;
 		position: absolute;
 		display: flex;
 		z-index: 1;
-		width: calc(100% - #{$sideMargin} * 2);
-		height: calc(100% - #{$topBottomMargin} * 2);
 		margin: auto;
 		top: $topBottomMargin;
 	}
@@ -105,6 +122,14 @@
 		background: white;
 		font-size: 0.9em;
 		padding: 20px 0;
+
+		@include narrow {
+			padding: 10px 0;
+		}
+
+		@include small {
+			padding: 0;
+		}
 	}
 
 	.mid {
@@ -115,13 +140,25 @@
 	}
 
 	$navWidth: 75px;
+	$navWidthNarrow: 50px;
+	$navWidthSmall: 20px;
 
 	.count {
 		color: gray;
 		position: absolute;
 		top: 0;
+		right: 0;
 		padding: 10px 0;
 		width: $navWidth;
+
+		@include narrow {
+			width: $navWidthNarrow;
+		}
+
+		@include small {
+			// width: $navWidthSmall;
+		}
+
 		text-align: center;
 	}
 
@@ -170,6 +207,17 @@
 			padding: 0;
 			height: $navWidth;
 			width: $navWidth;
+
+			@include narrow {
+				height: $navWidthNarrow;
+				width: $navWidthNarrow;
+			}
+
+			@include small {
+				height: $navWidthSmall;
+				width: $navWidthSmall;
+			}
+
 			fill: currentColor;
 		}
 		

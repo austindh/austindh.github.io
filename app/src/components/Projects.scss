@@ -1,4 +1,14 @@
+@import '../mixins';
+
 #projects {
+	@include narrow {
+		font-size: 0.9em;
+	}
+
+	@include small {
+		font-size: 0.7em;
+	}
+
 	.tech {
 		margin-top: 10px;
 	}
@@ -7,19 +17,25 @@
 		margin-right: 20px;
 	}
 
+	.pics .summary-text {
+		margin-top: 10px;
+	}
+
 	.summary {
 		margin-bottom: 10px;
 		font-size: 0.9em;
 		display: flex;
-		// align-items: center;
 		margin-right: 50px;
-		// margin-top: 15px;
-	}
 
+		@include atWidth(600px) {
+			flex-direction: column;
+			flex-direction: column-reverse;
 
-	.pics .summary-text {
-		// border: solid 1px gray;
-		margin-top: 10px;
+			.summary-text {
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+		}
 	}
 
 	.description {
@@ -28,16 +44,12 @@
 		background: #fff6d7;
 		margin: 10px 0;
 		box-shadow: 1px 1px 7px 2px #00000036;
-		// max-height: 500px;
-		// overflow: auto;
-		// &::-webkit-scrollbar-thumb {
-		// 	background-color: #ff8400;
-		// 	// outline: 1px solid slategrey;
-		// }
-		// &::-webkit-scrollbar-track {
-		// 	// -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-		// 	background: black;
-		// }
+
+		@include small {
+			margin: 10px 4px;
+			max-height: 300px;
+			overflow: auto;
+		}
 	}
 
 	code {

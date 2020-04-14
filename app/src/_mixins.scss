@@ -1,14 +1,26 @@
 $narrow: 800px;
 $small: 500px;
 
+@mixin atWidth($width) {
+	@media(max-width: #{$width}) {
+		@content;
+	}
+}
+
 @mixin narrow {
 	@media (max-width: #{$narrow}) {
-		@content
+		@content;
 	}
 }
 
 @mixin small {
 	@media (max-width: #{$small}) {
-		@content
+		@content;
+	}
+}
+
+@mixin xSmall {
+	@media (max-width: #{$small}) {
+		@content;
 	}
 }

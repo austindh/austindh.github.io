@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from 'react-router-dom';
 
 import "./NavBar.scss";
@@ -7,11 +7,12 @@ import clsx from "clsx";
 export const NavBar = () => {
 	interface Page {
 		name: string;
+		shortName?: string;
 		route: string;
 	}
 	const pages: Page[] = [
 		{ name: 'Home', route: '/' },
-		{ name: "Work Experience", route: "/work" },
+		{ name: "Work Experience", shortName: 'Work', route: "/work" },
 		{ name: "Projects", route: "/projects" },
 	];
 
@@ -27,8 +28,9 @@ export const NavBar = () => {
 		width: 0,
 		left: 0
 	});
+	const [windowWidth, setWindowWidth] = useState<number>(document.body.clientWidth);
 
-	const moveHighlighter = () => {
+	const moveHighlighter = useCallback(() => {
 		const highlighter = document.getElementById("highlighter");
 		const pageLink = document.getElementById(selectedPage);
 		if (!pageLink || !highlighter) {
@@ -37,7 +39,17 @@ export const NavBar = () => {
 	
 		const pageLeft = pageLink.offsetLeft;
 		const pageWidth = pageLink.clientWidth;
-		const newHighlighterWidth = pageWidth - 25;
+		
+		let widthOffset = 25;
+		if (windowWidth <= 800) {
+			widthOffset = 15;
+		}
+		if (windowWidth <= 500) {
+			widthOffset = 0;
+		}
+
+
+		const newHighlighterWidth = pageWidth - widthOffset;
 	
 		setHighlighterStyle(h => {
 			return {
@@ -46,12 +58,12 @@ export const NavBar = () => {
 				width: newHighlighterWidth
 			}
 		});
-	}
+	}, [selectedPage, windowWidth])
 
 	// move highlighter to center under correct element
 	useEffect(() => {
 		moveHighlighter();
-	}, [selectedPage]);
+	}, [moveHighlighter, selectedPage]);
 
 	// wait to show highlighter until initial positioning is done
 	useEffect(() => {
@@ -69,12 +81,13 @@ export const NavBar = () => {
 	useEffect(() => {
 		let timeout: NodeJS.Timeout;
 		const update = () => {
+			setWindowWidth(document.body.clientWidth);
 			clearTimeout(timeout);
 			timeout = setTimeout(moveHighlighter, 500);
 		};
 		window.addEventListener('resize', update);
 		return () => document.removeEventListener('resize', update);
-	}, [selectedPage]);
+	}, [moveHighlighter, selectedPage]);
 
 	return (
 		<div id="top-nav" className="shadow">
@@ -85,7 +98,7 @@ export const NavBar = () => {
 					active: p.name === selectedPage
 				})}>
 					<Link to={p.route} onClick={() => setSelectedPage(p.name)}>
-						{p.name}
+						{windowWidth <= 500 && p.shortName ? p.shortName : p.name}
 					</Link>
 				</div>
 			)) }
