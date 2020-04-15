@@ -18,6 +18,7 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 	const classes = props.classes || [];
 
 	const expandedRef = useRef<HTMLDivElement | null>(null);
+	const expansionCard = useRef<HTMLDivElement>(null);
 	const [expandedHeight, setExpandedHeight] = useState(0);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
@@ -29,12 +30,23 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 	const onClick = () => {
 		// Only trigger expansion callback if there is actually expandContent
 		if (!!props.expandContent && props.expansionChange) {
+			const newIsExpanded = !props.isExpanded;
 			props.expansionChange(!props.isExpanded);
+			
+			// If expanding - make sure we're scrolled into view
+			setTimeout(() => {
+				if (newIsExpanded && expansionCard.current) {
+					const offsetTop = expansionCard.current.offsetTop;
+					const main = document.getElementById('main') as HTMLElement;
+					main.classList.add('smooth');
+					main.scrollTop = offsetTop - 30;
+				}
+			}, 500); // wait till layout is done changing with expansion
 		}
 	}
 
 	return (
-		<div className={clsx('card', 'expansion-card', {
+		<div ref={expansionCard} className={clsx('card', 'expansion-card', {
 			expanded: props.isExpanded
 		}, ...classes)}>
 			<div className="contents">

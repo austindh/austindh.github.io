@@ -21,10 +21,14 @@ $paddingTop: 30px;
 	align-items: center;
 	opacity: 0;
 	transition: 
-		opacity 1s,
-		padding-top 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	opacity 1s,
+	padding-top 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	padding-top: $paddingTop + 50px;
 	overflow: auto;
+
+	&.smooth {
+		scroll-behavior: smooth;
+	}
 
 	&.show {
 		opacity: 1;

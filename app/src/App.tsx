@@ -73,9 +73,9 @@ function Main() {
 		addNextComponent(getComponent());
 		const main = document.querySelector('#main');
 		if (main) {
+			main.classList.remove("smooth");
 			main.scrollTop = 0;
 		}
-		// setNextComponent(getComponent());
 
 	}, [location.pathname, manualUpdate]);
 
