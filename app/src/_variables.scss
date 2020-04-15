@@ -1,11 +1,12 @@
-@import '_mixins.scss';
+// Colors
+$highlight: #ff8400;
+$grayText: #757575;
+$darkGray: #4c4c4c;
+$textColor: black;
+$projectDescriptionBackground: #fff6d7;
 
-// Desktop sizes
-$titleFontSize: 24px;
-$fontSize: 24px;
-
-// Narrow
-
-// Small
-
-
+// Tech list
+$generalTech: #cecece;
+$frontendTech: #d573ff;
+$backendTech: #7393ff;
+$dbTech: #ff7373;

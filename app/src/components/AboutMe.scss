@@ -9,7 +9,6 @@
 	}
 
 	.card-title {
-		// font-size: $titleFontSize;
 		font-size: 1.2em;
 	}
 
@@ -87,9 +86,7 @@
 
 	.contact {
 		font-size: 0.8em;
-		color: #575757;
 		align-items: center;
-		// display: flex;
 		margin-right: 30px;
 		padding: 15px 25px;
 		padding-top: 30px;
@@ -126,15 +123,14 @@
 			}
 
 			a {
-				color: #757575;
+				color: $grayText;
 				text-decoration: none;
 				display: flex;
-				// justify-content: center;
 				align-items: center;
 				margin-bottom: 8px;
 
 				&:hover {
-					color: black;
+					color: $textColor;
 				}
 			}
 		}

@@ -1,3 +1,5 @@
+@import '../variables';
+
 .tech-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -6,28 +8,23 @@
 	.tech {
 		$margin: 10px;
 		margin-right: $margin;
-		
-		
-		/** uncomment below to see as pills */
-
-		background: darken(#e7e7e7, 10%);
+		background: $generalTech;
 		border-radius: 100px;
 		padding: 2px 12px;
 		$lightPercent: 15%;
 
-
 		&.front-end {
-			$color: #d573ff;
+			$color: $frontendTech;
 			background: lighten($color: $color, $amount: $lightPercent);
 		}
 		
 		&.back-end {
-			$color: #7393ff;
+			$color: $backendTech;
 			background: lighten($color: $color, $amount: $lightPercent);
 		}
 		
 		&.database {
-			$color: #ff7373;
+			$color: $dbTech;
 			background: lighten($color: $color, $amount: $lightPercent);
 		}
 	}

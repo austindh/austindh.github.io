@@ -3,23 +3,8 @@ import cosha from 'cosha';
 
 import './AboutMe.scss';
 import { TechList } from './TechList';
-import ReactMarkdown from 'react-markdown';
-import { getImageThumbUrl, getImageUrl } from '../img/getImage';
+import { getImageThumbUrl } from '../img/getImage';
 import { ExpansionCard } from './ExpansionCard';
-
-
-const skills = `
-- React, TypeScript, Angular, AngularJS  
-- Redux, RxJS  
-- webpack, npm  
-- Jasmine, Mocha, Chai, SinonJS  
-- Node.js, Express  
-- SQL  
-- C# (.NET)  
-- Python  
-- Java
-`.trim();
-
 
 
 export const AboutMe = () => {
@@ -36,33 +21,12 @@ export const AboutMe = () => {
 	}, []);
 
 	const skillsGroup = [
-		['React',
-		'TypeScript',
-		'Angular',
-		'AngularJS',
-		'Redux',
-		'RxJS'],
-		['webpack',
-		'npm',
-		'Jasmine',
-		'Mocha',
-		'Chai',
-		'SinonJS'],
-		['Node.js',
-		'Express',
-		'C# (.NET)'],
-		['SQL', 'Postgres', 'SQLite'],
-		['Python',
-		'Java']
+		['React', 'TypeScript', 'Angular', 'AngularJS', 'Redux', 'RxJS'],
+		['webpack', 'npm', 'Jasmine', 'Mocha', 'Chai', 'SinonJS'],
+		['Node.js', 'Express', 'C# (.NET)'],
+		['SQL', 'Postgres', 'SQLite', 'MongoDB'],
+		['Python', 'Java']
 	];
-	const flatSkills: string[] = [];
-	skillsGroup.forEach(s => {
-		if (typeof s === 'string') {
-			flatSkills.push(s);
-		} else {
-			s.forEach(x => flatSkills.push(x));
-		}
-	});
 
 	const aboutMeCard = <ExpansionCard
 		classes={['about', 'card-1', 'intro']}
@@ -75,8 +39,6 @@ export const AboutMe = () => {
 					am passionate about web development, learning new technologies, and home
 					automation.
 				</span>
-				{/* <br/>
-				<span>I think if I filled this some more it might look better.</span> */}
 			</div>
 		}
 	/>;
@@ -85,13 +47,9 @@ export const AboutMe = () => {
 		title="Technology"
 		classes={['about', 'card-2', 'tech-card']}
 		topContent={
-			// <ReactMarkdown source={skills}/>
 			<TechList groupedTech={skillsGroup} techTypeOverrides={{
 				'front-end': ['typescript'],
 			}}/>
-			// <TechList tech={flatSkills} noSort techTypeOverrides={{
-			// 	'front-end': ['typescript'],
-			// }} />
 		}
 	/>;
 
@@ -130,7 +88,6 @@ export const AboutMe = () => {
           </a>
 		  <a href="/austin-hughes-resume.pdf"rel="noreferrer noopener" target="_blank">
 			  <img className="icon" src="/doc.svg" />
-			  {/* TODO update resume to include website link */}
 			  <span>resume.pdf</span>
 		  </a>
         </div>

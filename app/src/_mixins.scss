@@ -18,9 +18,3 @@ $small: 500px;
 		@content;
 	}
 }
-
-@mixin xSmall {
-	@media (max-width: #{$small}) {
-		@content;
-	}
-}

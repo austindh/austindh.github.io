@@ -1,7 +1,4 @@
 .page {
-	// background: white;
-	// padding: 15px;
-	// box-shadow: 1px 1px 6px 0px #0000002b;
 	opacity: 1;
 	width: 100%;
 	max-width: 1100px;
@@ -23,8 +20,6 @@
 	&.fade-out {
 		transition: opacity 700ms;
 		position: absolute;
-		// left: 20px;
-		// right: 20px;
 		left: 50%;
 		transform: translateX(-50%);
 	}

@@ -1,7 +1,7 @@
 @import '../mixins';
+@import '../variables';
 
 .photo-gallery {
-	// margin: 0 20px;
 
 	.thumb {
 		$transitionTime: 0.3s;
@@ -10,12 +10,9 @@
 		position: relative;
 		display: inline-flex;
 		transition: all $transitionTime;
-		// background: #c7c7c7;
-		// border: solid 1px gray;
 		padding: 5px;
 		margin: 5px;
 		box-shadow: 1px 1px 7px 2px #00000036;
-		// border: solid 1px #00000042;
 		
 		.img {
 			
@@ -46,7 +43,7 @@
 		}
 
 		svg {
-			color: #4c4c4c;
+			color: $darkGray;
 			fill: currentColor;
 			transition: all $transitionTime;
 		}
@@ -55,8 +52,7 @@
 			box-shadow: 1px 1px 7px 2px #0000006b;
 
 			svg {	
-				color: black;
-				// color: #ff8400;
+				color: $textColor;
 			} 
 		}
 	}
@@ -155,10 +151,6 @@
 			width: $navWidthNarrow;
 		}
 
-		@include small {
-			// width: $navWidthSmall;
-		}
-
 		text-align: center;
 	}
 
@@ -175,31 +167,21 @@
 	}
 
 	.img {
-		// margin: 20px;
 		box-sizing: border-box;
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;
-		// flex-grow: 1;
 		width: 100%;
 		height: 100%;
-	}
-
-	img {
-		// max-width: 100%;
-		// max-height: 100%;
-		// border: solid 1px gray;
 	}
 
 	.nav {
 		display: flex;
 		align-items: center;
 		color: #c7c7c7;
-		// color: lighten(#ff8400, 30%);
 		
 		&:hover {
-			color: gray;
-			color: #ff8400;
+			color: $highlight;
 		}
 		
 		svg {

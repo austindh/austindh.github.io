@@ -19,7 +19,6 @@
 	.top-bar {
 		display: flex;
 		justify-content: space-between;
-		$expandColor: #ff8400;
 		$expandColor: black;
 		
 		&:hover .expander svg {

@@ -2,16 +2,11 @@
 @import '../variables';
 
 #top-nav {
-	background: lightgray;
 	display: flex;
-	// padding: 15px 20px;
-	// width: 100%;
-	// position: sticky;
 	top: 0;
 	z-index: 1;
-	// box-shadow: 1px 1px 3px #0000001f;
 	background: white;
-	color: #757575;
+	color: $grayText;
 
 	@include narrow {
 		font-size: 0.8em;
@@ -46,7 +41,7 @@
 			}
 
 			&:hover {
-				color: black;
+				color: $textColor;
 			}
 
 			a {
@@ -55,7 +50,7 @@
 			}
 
 			&.active {
-				color: black;
+				color: $textColor;
 				font-weight: bold;
 			}
 		}
@@ -65,7 +60,7 @@
 			bottom: 0;
 			width: 0px;
 			height: 3px;
-			background: #ff8400;
+			background: $highlight;
 			transition: 
 				left 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55),
 				width 0.5s ease-in-out,
@@ -84,7 +79,7 @@
 		font-family: 'Barlow', sans-serif;
 		margin-top: -5px;
 		padding: 15px;
-		color: black;
+		color: $textColor;
 
 		@include narrow {
 			font-size: 20px;
