@@ -23,7 +23,7 @@ export const AboutMe = () => {
 	const skillsGroup = [
 		['React', 'TypeScript', 'Angular', 'AngularJS', 'Redux', 'RxJS'],
 		['webpack', 'npm', 'Jasmine', 'Mocha', 'Chai', 'SinonJS'],
-		['Node.js', 'Express', 'C# (.NET)'],
+		['Node.js', 'Express', 'C# (.NET)', 'Django'],
 		['SQL', 'Postgres', 'SQLite', 'MongoDB'],
 		['Python', 'Java']
 	];
@@ -86,7 +86,7 @@ export const AboutMe = () => {
             <img className="icon" src="/linkedin.svg" alt="" />
             <span>austindh816</span>
           </a>
-		  <a href="/austin-hughes-resume.pdf"rel="noreferrer noopener" target="_blank">
+		  <a href="/austin-hughes.pdf"rel="noreferrer noopener" target="_blank">
 			  <img className="icon" src="/doc.svg" />
 			  <span>resume.pdf</span>
 		  </a>
