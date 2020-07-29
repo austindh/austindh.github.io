@@ -15,5 +15,5 @@ $ npm run build
 
 ## Updating images
 ```bash
-$ nmp run img
+$ npm run img
 ```

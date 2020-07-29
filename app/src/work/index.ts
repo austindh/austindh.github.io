@@ -1,3 +1,5 @@
+import { parse } from "date-fns";
+
 export interface JobTitle {
 	title: string
 	start: Date
@@ -12,6 +14,10 @@ export interface Job {
 	tech: string[]
 }
 
+const toDate = (dateString: string): Date => {
+	return parse(dateString, 'MMM yyyy', new Date());
+}
+
 export const myJobs: Job[] = [
 	{
 		companyName: "BYU Center for Teaching & Learning",
@@ -19,8 +25,8 @@ export const myJobs: Job[] = [
 		titles: [
 			{
 				title: "Web Developer",
-				start: new Date("Mar 2014"),
-				end: new Date("May 2016")
+				start: toDate("Mar 2014"),
+				end: toDate("May 2016")
 			}
 		],
 		responsibilities: [
@@ -36,8 +42,8 @@ export const myJobs: Job[] = [
 		titles: [
 			{
 				title: 'Full Stack Developer',
-				start: new Date('Jan 2016'),
-				end: new Date('May 2016')
+				start: toDate('Jan 2016'),
+				end: toDate('May 2016')
 			}
 		],
 		responsibilities: [
@@ -54,8 +60,8 @@ export const myJobs: Job[] = [
 		titles: [
 			{
 				title: 'Software Development Intern',
-				start: new Date('May 2016'),
-				end: new Date('Aug 2016')
+				start: toDate('May 2016'),
+				end: toDate('Aug 2016')
 			}
 		],
 		responsibilities: [
@@ -71,17 +77,17 @@ export const myJobs: Job[] = [
 		titles: [
 			{
 				title: 'Internet Applications Developer',
-				start: new Date('Oct 2016'),
-				end: new Date('May 2018')
+				start: toDate('Oct 2016'),
+				end: toDate('May 2018')
 			},
 			{
 				title: 'Developer I',
-				start: new Date('May 2018'),
-				end: new Date('Oct 2018')
+				start: toDate('May 2018'),
+				end: toDate('Oct 2018')
 			},
 			{
 				title: 'Developer II',
-				start: new Date('Oct 2018')
+				start: toDate('Oct 2018')
 			}
 		],
 		responsibilities: [

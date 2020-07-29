@@ -7,6 +7,7 @@
 	z-index: 1;
 	background: white;
 	color: $grayText;
+	flex-shrink: 0;
 
 	@include narrow {
 		font-size: 0.8em;
