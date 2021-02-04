@@ -24,16 +24,17 @@ export const Page = (props: PageProps) => {
 		}
 	}, [props.fadeOut]);
 
+	const {onFadeOut} = props;
 	useEffect(() => {
 		if (isFadingOut) {
 			setTimeout(() => {
 				setFadingOut(false);
-				if (props.onFadeOut) {
-					props.onFadeOut();
+				if (onFadeOut) {
+					onFadeOut();
 				}
 			}, 1500);
 		}
-	}, [isFadingOut]);
+	}, [isFadingOut, onFadeOut]);
 
 	// Fade in component
 	useEffect(() => {

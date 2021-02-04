@@ -60,6 +60,7 @@ export const Jobs = () => {
 					<TechList tech={job.tech} />
 				</div>
 			}
+			noExpand={!job.responsibilities.length}
 		/>
 	));
 

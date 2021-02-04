@@ -83,7 +83,7 @@ and integrate with all Hue commands/sequences.
 export const Automation: Project = { 
 	name: 'Home Automation',
 	summary: 'My home automation project. What started as a simple Node.js server on a Raspberry Pi has expanded to an external facing server hosted on AWS and a local server running on an Intel NUC.',
-	tech: ['React', 'TypeScript', 'Node.js', 'Express', 'RxJS', 'Python', 'AWS', 'Nginx', 'MongoDB', 'Postgres', 'SQLite', 'Socket.IO'],
+	tech: ['React', 'TypeScript', 'Docker', 'Node.js', 'Express', 'RxJS', 'Python', 'AWS', 'Nginx', 'MongoDB', 'Postgres', 'SQLite', 'Socket.IO'],
 	description,
 	pics: [
 		{

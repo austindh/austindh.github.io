@@ -3,6 +3,8 @@
 ## Development
 
 ```bash
+cd app
+
 # install dependencies
 $ npm install
 

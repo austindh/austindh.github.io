@@ -23,7 +23,7 @@ export const TechList = (props: TechListProps) => {
 	const sortOrder: TechType[] = ['general', 'front-end', 'back-end', 'database'];
 	const frontEndTech = ['angular', 'react', 'bootstrap', 'jquery', 'handlebars', 
 		'backbone', 'material', 'rxjs', 'redux'];
-	const backEndTech = ['c#', 'node', 'express', 'php', 'jersey', 'aws', 'nginx', 'django'];
+	const backEndTech = ['c#', 'node', 'express', 'php', 'jersey', 'aws', 'nginx', 'django', 'docker'];
 	const dbTech = ['mongo', 'oracle', 'sql', 'postgres']
 
 	const matches = (name: string, tech: string[]): boolean => {

@@ -23,7 +23,7 @@ export const AboutMe = () => {
 	const skillsGroup = [
 		['React', 'TypeScript', 'Angular', 'AngularJS', 'Redux', 'RxJS'],
 		['webpack', 'npm', 'Jasmine', 'Mocha', 'Chai', 'SinonJS'],
-		['Node.js', 'Express', 'C# (.NET)', 'Django'],
+		['Node.js', 'Express', 'Docker', 'C# (.NET)', 'Django'],
 		['SQL', 'Postgres', 'SQLite', 'MongoDB'],
 		['Python', 'Java']
 	];
@@ -35,9 +35,7 @@ export const AboutMe = () => {
 				<span>Hi, I'm Austin!</span>
 				<br/>
 				<span>
-					I am a full stack web developer seeking a full-time remote position. I
-					am passionate about web development, learning new technologies, and home
-					automation.
+					I am a full stack web developer, musician, and home automation enthusiast. 
 				</span>
 			</div>
 		}
@@ -71,23 +69,23 @@ export const AboutMe = () => {
 	return (
     <div id="about-me">
       <div className="contact card">
-        <img src="/austin.jpg" alt="" className="pic profile" />
+        <img src="/austin.jpg" alt="me" className="pic profile" />
         <div className="info">
           <a href="mailto:austindavidhughes@gmail.com">
-            <img className="icon" src="/email.svg" alt="" />
+            <img className="icon" src="/email.svg" alt="email-icon" />
             <span>austindavidhughes@gmail.com</span>
             {/* <span>mail@austinhughes.me</span> */}
           </a>
           <a href="https://github.com/austindh" rel="noreferrer noopener" target="_blank">
-            <img className="icon" src="/github.png" alt="" />
+            <img className="icon" alt="github-icon" src="/github.png" />
             <span>austindh</span>
           </a>
           <a href="https://www.linkedin.com/in/austindh816" rel="noreferrer noopener" target="_blank">
-            <img className="icon" src="/linkedin.svg" alt="" />
+            <img className="icon" alt="linked-in-icon" src="/linkedin.svg" />
             <span>austindh816</span>
           </a>
 		  <a href="/austin-hughes.pdf"rel="noreferrer noopener" target="_blank">
-			  <img className="icon" src="/doc.svg" />
+			  <img className="icon" alt="doc-icon" src="/doc.svg" />
 			  <span>resume.pdf</span>
 		  </a>
         </div>

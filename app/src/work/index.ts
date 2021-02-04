@@ -87,7 +87,8 @@ export const myJobs: Job[] = [
 			},
 			{
 				title: 'Developer II',
-				start: toDate('Oct 2018')
+				start: toDate('Oct 2018'),
+				end: toDate('May 2020')
 			}
 		],
 		responsibilities: [
@@ -101,6 +102,20 @@ export const myJobs: Job[] = [
 			'Worked as part of a team of developers on a React application'
 		],
 		tech: ['C# (.NET)', 'Oracle SQL', 'AngularJS', 'TypeScript', 'Angular', 'React', 'Babel']
+	},
+	{
+		companyName: 'SemanticBits',
+		location: 'remote',
+		titles: [
+			{
+				title: 'Software Engineer',
+				start: toDate('May 2020')
+			}
+		],
+		responsibilities: [
+
+		],
+		tech: ['React', 'Node.js']
 	}
 ];
 

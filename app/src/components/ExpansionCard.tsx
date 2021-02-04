@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { ReactComponent as Caret } from '../icons/caret-down.svg';
@@ -12,6 +12,7 @@ interface ExpansionCardProps {
 	topContent?: any
 	expandContent?: any
 	bottomContent?: any
+	noExpand?: boolean
 }
 
 export const ExpansionCard = (props: ExpansionCardProps) => {
@@ -30,18 +31,18 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 	const onClick = () => {
 		// Only trigger expansion callback if there is actually expandContent
 		if (!!props.expandContent && props.expansionChange) {
-			const newIsExpanded = !props.isExpanded;
+			// const newIsExpanded = !props.isExpanded;
 			props.expansionChange(!props.isExpanded);
 			
 			// If expanding - make sure we're scrolled into view
-			setTimeout(() => {
-				if (newIsExpanded && expansionCard.current) {
-					const offsetTop = expansionCard.current.offsetTop;
-					const main = document.getElementById('main') as HTMLElement;
-					main.classList.add('smooth');
-					main.scrollTop = offsetTop - 30;
-				}
-			}, 500); // wait till layout is done changing with expansion
+			// setTimeout(() => {
+			// 	if (newIsExpanded && expansionCard.current) {
+			// 		const offsetTop = expansionCard.current.offsetTop;
+			// 		const main = document.getElementById('main') as HTMLElement;
+			// 		main.classList.add('smooth');
+			// 		main.scrollTop = offsetTop - 30;
+			// 	}
+			// }, 500); // wait till layout is done changing with expansion
 		}
 	}
 
@@ -52,7 +53,7 @@ export const ExpansionCard = (props: ExpansionCardProps) => {
 			<div className="contents">
 				<div className="top">
 					<div className={clsx('top-bar', {
-						'has-content': !!props.expandContent
+						'has-content': !!props.expandContent && !props.noExpand
 					})} onClick={onClick}>
 						<div className="card-title">{props.title}</div>
 						<div className={clsx('expander', {

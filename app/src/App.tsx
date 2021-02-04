@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
 	HashRouter as Router,
 	useLocation
@@ -36,7 +36,7 @@ function Main() {
 
 	const isFirstRun = useRef(true);
 
-	const getComponent = () => {
+	const getComponent = useCallback( () => {
 		let newComponent = <div className="card">empty</div>;
 		switch(location.pathname) {
 			case '/work':
@@ -50,13 +50,11 @@ function Main() {
 				break;
 		}
 		return newComponent;
-	}
+	}, [location.pathname]);
 
 	const [pageWidth, setPageWidth] = useState(0);
-	const [manualUpdate, setManualUpdate] = useState(false);
 	// const isTransitioning = useRef(false);
 	useEffect(() => {
-
 		if (isFirstRun.current) {
 			isFirstRun.current = false;
 			setCurrentComponent({
@@ -77,7 +75,7 @@ function Main() {
 			main.scrollTop = 0;
 		}
 
-	}, [location.pathname, manualUpdate]);
+	}, [location.pathname, getComponent]);
 
 
 	const transitionComplete = () => {
