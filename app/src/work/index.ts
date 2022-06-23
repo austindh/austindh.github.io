@@ -109,13 +109,18 @@ export const myJobs: Job[] = [
 		titles: [
 			{
 				title: 'Software Engineer',
-				start: toDate('May 2020')
+				start: toDate('May 2020'),
+				end: toDate('May 2022')
+			},
+			{
+				title: 'Senior Software Engineer',
+				start: toDate('May 2022')
 			}
 		],
 		responsibilities: [
 
 		],
-		tech: ['React', 'Node.js']
+		tech: [ 'TypeScript', 'React', 'Node.js']
 	}
 ];
 
